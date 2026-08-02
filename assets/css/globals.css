@@ -1,0 +1,26 @@
+/* Root variables */
+:root {
+  --font-body: system-ui, sans-serif;
+  --font-display: system-ui, sans-serif;
+  --font-utility: system-ui, sans-serif;
+
+  --color-primary-light: ...;
+  --color-primary-dark: ..;
+  --color-secondary: ...;
+  --color-accent: ...;
+
+  /* Include border-radius, breakpoints & spacing vars here if no Bootstrap */
+}
+
+/* Project defaults */
+body {
+  font-family: var(--font-body);
+}
+h1 {
+  font-family: var(--font-display);
+}
+:focus-visible {
+  /* Remember to test this */
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}

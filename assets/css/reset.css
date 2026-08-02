@@ -1,0 +1,68 @@
+/* Browser resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+/* Document defaults */
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body {
+  min-height: 100dvh;
+  font-family: system-ui, sans-serif;
+}
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+p {
+  overflow-wrap: break-word;
+}
+/* Links */
+a {
+  color: inherit;
+}
+/* Media */
+img,
+picture,
+video,
+canvas,
+figure,
+svg {
+  display: block;
+  max-width: 100%;
+}
+img,
+picture {
+  height: auto;
+}
+/* Form controls */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+}
+textarea {
+  /* Prevent textarea from breaking layouts */
+  resize: vertical;
+}
+table {
+  border-collapse: collapse;
+}
