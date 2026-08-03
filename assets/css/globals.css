@@ -1,23 +1,23 @@
 /* Root variables */
 :root {
-  --font-body: system-ui, sans-serif;
-  --font-display: system-ui, sans-serif;
-  --font-utility: system-ui, sans-serif;
+  --font-body: "Google Sans Flex", system-ui, sans-serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
 
-  --color-primary-light: ...;
-  --color-primary-dark: ..;
-  --color-secondary: ...;
-  --color-accent: ...;
-
-  /* Include border-radius, breakpoints & spacing vars here if no Bootstrap */
+  --color-primary-light: #F5F6F4;
+  --color-primary-dark: #0B1120; 
+  --color-accent-sky: #38BDF8;
+  --color-accent-aqua: #67E8F9;
 }
 
 /* Project defaults */
 body {
   font-family: var(--font-body);
+  background-color: var(--color-primary-dark);
 }
 h1 {
   font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-primary-light);
 }
 :focus-visible {
   /* Remember to test this */

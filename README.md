@@ -2,11 +2,11 @@
 
 Brief overview of the project.
 
-The project can be viewed [here](https:// PROJECT URL).
+[View the deployed project](https://qasim5259.github.io/insight-lab).
 
 ![PROJECT NAME landing page mocked up on multiple screen sizes](documentation/ AMIRESPONSIVE IMG)
 
-Interact with the site on different screen sizes [here](https://fireship.dev/amiresponsive?url= PROJECT URL)
+[Interact with the site on different screen sizes](https://fireship.dev/amiresponsive?url=https://qasim5259.github.io/insight-lab).
 
 ## UX
 
@@ -47,30 +47,29 @@ Defining the MVP. Project Board & MoSCoW prioritisation here. MVP first developm
 
 #### Wireframes
 
-![PROJECT NAME wireframes for different screen sizes](documentation/wireframes.png)
+![InsightLab wireframes for different screen sizes](documentation/wireframes.png)
 
 ### Surface
 
 #### Colour
 
-![The PROJECT NAME colour scheme](documentation/colour.png)
+![The InsightLab colour scheme](documentation/colour.png)
 
 #### Typography
 
 ##### Display Font
 
-![The PROJECT NAME display font](documentation/display.png)
-Discussion of reasoning for choice.
+![The InsightLab display font](documentation/display.png)
 
 #### Body Font
 
-![The PROJECT NAME body font](documentation/body.png)
+![The InsightLab body font](documentation/body.png)
 Discussion of reasoning for choice.
 
 #### Utility Font
-
-![The PROJECT NAME utility font](documentation/utility.png)
+![The InsightLab utility font](documentation/utility.png)
 Discussion of reasoning for choice.
+
 
 #### Shape & Space
 
@@ -91,7 +90,7 @@ Discussion of reasoning for choice.
 
 ### Frameworks & Libraries
 
-- Bootstrap 5.3.x ************************ REMOVE IF NO
+- Bootstrap 5.3.x
 - *************8 ICONS
 
 ### Version Control & Deployment
@@ -100,7 +99,11 @@ Discussion of reasoning for choice.
 - GitHub
 - GitHub Pages
 
+### Design Tools
+
+- Adobe Express: used to design favicon
 ### AI Contributions
+### AI Tools
 
 A comment on how AI use impacted on workflow
 
@@ -123,6 +126,7 @@ Note key interventions
 ## Testing
 
 ### Manual Testing
+
 #### User Story Acceptance Criteria
 
 | User Story | Acceptance Criteria | Testing
@@ -130,6 +134,7 @@ Note key interventions
 Either Pass or a link to the Issue created as a result of the failure.
 
 #### Development vs Deployed
+
 There are no major discrepancies between the development version of the site, and the deployed version.
 
 ### Code Validation
@@ -142,11 +147,12 @@ There are no major discrepancies between the development version of the site, an
 
 ### Lighthouse
 
-![PROJECT NAME Lighthouse testing on mobile](documentation/lighthouse-mobile.png)
+![InsightLab Lighthouse testing on mobile](documentation/lighthouse-mobile.png)
 
-![PROJECT NAME Lighthouse testing on desktop](documentation/lighthouse-desktop.png)
+![InsightLab Lighthouse testing on desktop](documentation/lighthouse-desktop.png)
 
 ### Known Bugs
+
 If any, explain why they have not yet been resolved.
 
 ## Deployment
