@@ -49,7 +49,7 @@
       aria-label="Main navigation"
     >
       <div class="container-fluid">
-        <a class="navbar-brand ps-1" href="hero">
+        <a class="navbar-brand ps-1" href="#hero">
           <h1>InsightLab</h1>
         </a>
         <button
@@ -88,22 +88,27 @@
     <div id="content-wrapper">
       <!-- Main Page Content -->
       <main id="hero">
-        <h1>Page Title</h1>
         <!-- Welcome screen -->
 
         <section
           id="welcome-screen"
-          class="welcome-section-container"
+          class="container d-flex flex-column justify-content-center align-items-center text-center py-5"
           aria-labelledby="welcome-heading"
         >
-          <p class="welcome-tag">InsightLab</p>
+          <div class="welcome-content">
+            <p class="welcome-tag text-uppercase mb-3">
+              InsightLab personality assessment
+            </p>
 
-          <h1>Discover your personality</h1>
+            <h1 id="welcome-heading" class="display-1 mb-4">
+              Discover your personality
+            </h1>
 
-          <p class="welcome-intro">
-            Understand your behavioural traits through a short personality
-            assessment designed to reveal your unique profile.
-          </p>
+            <p class="welcome-intro lead mx-auto mb-4">
+              Understand your behavioural traits through a short personality
+              assessment designed to reveal your unique profile.
+            </p>
+          </div>
         </section>
       </main>
 
