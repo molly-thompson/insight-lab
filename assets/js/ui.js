@@ -1,3 +1,4 @@
+// import { quiz } from "./modules/quiz.js";
 // UI related JS
 
 // Start button
