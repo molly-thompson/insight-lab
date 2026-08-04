@@ -2,11 +2,11 @@
 
 Brief overview of the project.
 
-The project can be viewed [here](https:// PROJECT URL).
+[View the deployed project](https://qasim5259.github.io/insight-lab).
 
 ![PROJECT NAME landing page mocked up on multiple screen sizes](documentation/ AMIRESPONSIVE IMG)
 
-Interact with the site on different screen sizes [here](https://fireship.dev/amiresponsive?url= PROJECT URL)
+[Interact with the site on different screen sizes](https://fireship.dev/amiresponsive?url=https://qasim5259.github.io/insight-lab).
 
 ## UX
 
@@ -47,30 +47,41 @@ Defining the MVP. Project Board & MoSCoW prioritisation here. MVP first developm
 
 #### Wireframes
 
-![PROJECT NAME wireframes for different screen sizes](documentation/wireframes.png)
+![InsightLab wireframes for different screen sizes](documentation/wireframes.png)
 
 ### Surface
 
+InsightLab's visual identity was designed to reflect the values of a modern behavioural analysis platform: clarity, trust and precision. The aim of a creating a clean, focused, professional & accessible interface, was integral to the design choices in this project.
+
 #### Colour
 
-![The PROJECT NAME colour scheme](documentation/colour.png)
+![The InsightLab colour scheme](documentation/colour.png)
+The colour scheme for InsightLabs provides a calm, focused & professional palette. The dark interface reduces visual clutter, keeps attention on the content, and creates a premium aesthetic associated with modern analytics software.
+
+Gradations of these tones are used to allow the UI to have depth, without increasing visual complexity, brighter accent colours are used to provide balance and depth. The aqua accent creates the sense of technology and intelligence; which is well paired with the reliability and trust of the deep navy base.
+
+Colour is used sparingly to communicate hierarchy and interaction rather than decoration, resulting in a professional, accessible experience.
 
 #### Typography
 
 ##### Display Font
 
-![The PROJECT NAME display font](documentation/display.png)
-Discussion of reasoning for choice.
+![The InsightLab display font](documentation/display.png)
+The display font, Space Grotesk, is a modern san-serif font. The angular, geometric quality of the font communicates precision, modernity & intelligence. These attributes are aligned with the brand personality of InsightLabs.
+
+However, the technicality of the font is offset by the roundedness and openness of the letter-forms and generous spacing, particularly in the heavier font weights. Having this balance it particularly important for an assessment platform: the ; its dual appeal means it caters to both of the core users of the site.
+
+The overall impact is an approachable, clean & organised interface.
 
 #### Body Font
 
-![The PROJECT NAME body font](documentation/body.png)
-Discussion of reasoning for choice.
+![The InsightLab body font](documentation/body.png)
+
 
 #### Utility Font
 
-![The PROJECT NAME utility font](documentation/utility.png)
-Discussion of reasoning for choice.
+![The InsightLab utility font](documentation/utility.png)
+This monospaced, technical font is well suited to conveying the data-driven nature of the results page.
 
 #### Shape & Space
 
@@ -91,7 +102,7 @@ Discussion of reasoning for choice.
 
 ### Frameworks & Libraries
 
-- Bootstrap 5.3.x ************************ REMOVE IF NO
+- Bootstrap 5.3.x
 - *************8 ICONS
 
 ### Version Control & Deployment
@@ -100,11 +111,19 @@ Discussion of reasoning for choice.
 - GitHub
 - GitHub Pages
 
+### Design Tools
+
+- Adobe Express: used to design favicon
+
 ### AI Contributions
+
+### AI Tools
 
 A comment on how AI use impacted on workflow
 
 #### Written contributions
+
+- Chat GPT was used to generate some initial ideas for project concepts
 
 #### Design Contributions
 
@@ -123,6 +142,7 @@ Note key interventions
 ## Testing
 
 ### Manual Testing
+
 #### User Story Acceptance Criteria
 
 | User Story | Acceptance Criteria | Testing
@@ -130,6 +150,7 @@ Note key interventions
 Either Pass or a link to the Issue created as a result of the failure.
 
 #### Development vs Deployed
+
 There are no major discrepancies between the development version of the site, and the deployed version.
 
 ### Code Validation
@@ -142,11 +163,12 @@ There are no major discrepancies between the development version of the site, an
 
 ### Lighthouse
 
-![PROJECT NAME Lighthouse testing on mobile](documentation/lighthouse-mobile.png)
+![InsightLab Lighthouse testing on mobile](documentation/lighthouse-mobile.png)
 
-![PROJECT NAME Lighthouse testing on desktop](documentation/lighthouse-desktop.png)
+![InsightLab Lighthouse testing on desktop](documentation/lighthouse-desktop.png)
 
 ### Known Bugs
+
 If any, explain why they have not yet been resolved.
 
 ## Deployment
@@ -161,7 +183,8 @@ If any, explain why they have not yet been resolved.
 
 ### Code
 
-See [AI Tools - Code Contributions](#code-contributions)
+- See [AI Tools - Code Contributions](#code-contributions)
+- SVG Noise Filter utilised code from [CSS-Tricks: Grainy Gradients](https://css-tricks.com/grainy-gradients/)
 
 ### Media
 
