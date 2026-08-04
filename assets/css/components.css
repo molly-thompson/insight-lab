@@ -14,7 +14,7 @@
 .welcome-tag {
   color: var(--color-accent-aqua);
   font-family: var(--font-display);
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.12em;
 }
