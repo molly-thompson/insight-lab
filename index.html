@@ -92,10 +92,12 @@
 
         <section
           id="welcome-screen"
-          class="container d-flex flex-column justify-content-center align-items-center text-center py-5"
+          class="container py-5"
           aria-labelledby="welcome-heading"
         >
-          <div class="welcome-content">
+          <div
+            class="welcome-content d-flex flex-column justify-content-center align-items-center text-center mx-auto"
+          >
             <p class="welcome-tag text-uppercase mb-3">
               InsightLab personality assessment
             </p>
@@ -125,6 +127,21 @@
             >
               Start Assessment
             </button>
+          </div>
+        </section>
+
+        <!-- Quiz Section -->
+
+        <section
+          id="quiz-screen"
+          class="container py-5"
+          aria-labelledby="quiz-heading"
+          hidden
+        >
+          <h2 id="quiz-heading" tabindex="-1">Personality assessment</h2>
+
+          <div id="quiz-content">
+            <!-- Quiz content will be rendered here -->
           </div>
         </section>
       </main>

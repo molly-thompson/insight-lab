@@ -8,6 +8,7 @@
 
 .welcome-content {
   width: min(100%, 55rem);
+  min-height: calc(100dvh - 7rem);
 }
 
 .welcome-tag {
