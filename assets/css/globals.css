@@ -1,26 +1,101 @@
 /* Root variables */
 :root {
-  --font-body: system-ui, sans-serif;
-  --font-display: system-ui, sans-serif;
-  --font-utility: system-ui, sans-serif;
+  --font-body: "Google Sans Flex", system-ui, sans-serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
 
-  --color-primary-light: ...;
-  --color-primary-dark: ..;
-  --color-secondary: ...;
-  --color-accent: ...;
-
-  /* Include border-radius, breakpoints & spacing vars here if no Bootstrap */
+  --color-primary-light: #f5f6f4;
+  --color-primary-dark: #0b1120;
+  --color-accent-sky: #38bdf8;
+  --color-accent-aqua: #67e8f9;
 }
 
 /* Project defaults */
 body {
   font-family: var(--font-body);
+  color: var(--color-primary-light);
+  min-height: 100dvh;
+  background:
+        /* Grid glow effect */
+    radial-gradient(
+      circle at top center,
+      rgba(56, 189, 248, 0.08),
+      transparent 60%
+    ),
+    /* Background grid effect */
+    repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 39px,
+        rgba(255, 255, 255, 0.04) 40px
+      ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 39px,
+      rgba(255, 255, 255, 0.04) 40px
+    ),
+    var(--color-primary-dark);
+
 }
-h1 {
+ .grid-overlay { 
+  /* Grid vignette effect */
+  position: fixed;
+  width: 100dvw;
+  height: 100dvh;
+  inset: 0;
+  mask-image: radial-gradient(circle, var(--color-primary-dark) 80%, transparent);
+  z-index: -98;
+ } 
+.noise {
+  position: fixed;
+  inset: 0;
+  background-image: url("../images/noise.svg");
+  background-repeat: repeat;
+  opacity: 0.02;
+  z-index: -99;
+  mix-blend-mode: soft-light;
+}
+main {
+  display: flex;
+  min-height: calc(100dvh - 5rem);
+  margin-top: 1rem;
+  flex-direction: column;
+  justify-items: center;
+  align-content: center;
+  align-self: center;
+  justify-self: center;
+}
+#navbar, #offcanvas {
+  backdrop-filter: blur(16px) hue-rotate(7deg);
+  -webkit-backdrop-filter: blur(16px) hue-rotate(7deg);
+  z-index: 100;
+  box-shadow: 0 2px 20px color-mix(var(--color-accent-sky) 8%, transparent);
+} 
+#offcanvas-toggle {
+    backdrop-filter: inherit;
+    -webkit-backdrop-filter: blur(16px) hue-rotate(7deg);
+    font-size: 160%;
+    font-family: var(--font-display);
+    font-weight: 900;
+    &:hover {
+      border-radius: 2px 2px 5px color-mix(var(--color-accent-sky) 15%, transparent);
+    }
+  }
+h1, nav {
   font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-primary-light);
 }
+
+/* ACCESSIBILITY */
 :focus-visible {
-  /* Remember to test this */
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
+  outline: 2px solid var(--color-accent-aqua) !important;
+  outline-offset: 2px !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  [class~="animation"] {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
