@@ -156,17 +156,37 @@ nav {
   }
 }
 /* MODALS */
-#about *,
-#methodology * {
-  background: color-mix(var(--color-primary-dark) 15%, transparent);
+#about .modal-content,
+#methodology .modal-content {
+  background: color-mix(in srgb, var(--color-primary-dark) 88%, transparent);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
-  & .modal-content {
-    box-shadow: 0 0 60px color-mix(var(--color-accent-sky) 35%, transparent);
-  }
-  & button.btn-close {
-    background-color: inherit;
-  }
+
+  border: 1px solid rgba(103, 232, 249, 0.18);
+  box-shadow: 0 0 20px
+    color-mix(in srgb, var(--color-accent-sky) 20%, transparent);
+}
+
+#about .modal-header,
+#methodology .modal-header {
+  border-bottom-color: rgba(245, 246, 244, 0.15);
+}
+
+#about .btn-close,
+#methodology .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+  opacity: 0.8;
+}
+
+#about .btn-close:hover,
+#methodology .btn-close:hover {
+  opacity: 1;
+}
+
+#methodology .modal-body,
+#about .modal-body {
+  padding: 1.25rem;
+  line-height: 1.55;
 }
 /* ACCESSIBILITY */
 :focus-visible {
