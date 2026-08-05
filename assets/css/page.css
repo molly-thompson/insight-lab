@@ -1,3 +1,5 @@
+/* PAGE STYLES */
+
 /* Root variables */
 :root {
   --font-body: "Google Sans Flex", system-ui, sans-serif;
@@ -10,7 +12,29 @@
   --color-accent-aqua: #67e8f9;
 }
 
-/* Project defaults */
+/* BACKGROUND */
+.grid-overlay {
+  /* Grid vignette effect */
+  position: fixed;
+  width: 100dvw;
+  height: 100dvh;
+  inset: 0;
+  mask-image: radial-gradient(
+    circle,
+    var(--color-primary-dark) 80%,
+    transparent
+  );
+  z-index: -98;
+}
+.noise {
+  position: fixed;
+  inset: 0;
+  background-image: url("../images/noise.svg");
+  background-repeat: repeat;
+  opacity: 0.02;
+  z-index: -99;
+  mix-blend-mode: soft-light;
+}
 body {
   font-family: var(--font-body);
   color: var(--color-primary-light);
@@ -37,28 +61,7 @@ body {
     ),
     var(--color-primary-dark);
 }
-.grid-overlay {
-  /* Grid vignette effect */
-  position: fixed;
-  width: 100dvw;
-  height: 100dvh;
-  inset: 0;
-  mask-image: radial-gradient(
-    circle,
-    var(--color-primary-dark) 80%,
-    transparent
-  );
-  z-index: -98;
-}
-.noise {
-  position: fixed;
-  inset: 0;
-  background-image: url("../images/noise.svg");
-  background-repeat: repeat;
-  opacity: 0.02;
-  z-index: -99;
-  mix-blend-mode: soft-light;
-}
+/* LAYOUT */
 main {
   display: flex;
   height: 86.5dvh;
@@ -68,18 +71,21 @@ main {
   align-content: center;
   text-align: center;
 }
-#about *, #methodology * {
-  background: color-mix(var(--color-primary-dark) 15%, transparent);
-  backdrop-filter: blur(40px);  
-  -webkit-backdrop-filter: blur(40px);
-  & .modal-content {
-    box-shadow: 0 0 60px color-mix(var(--color-accent-sky) 35%, transparent);
-  }
-  & button.btn-close {
-    background-color: inherit;
-  }
+footer {
+  position: sticky;
+  bottom: 0;
+  height: 2dvh;
+  font-family: var(--font-body);
+  text-align: center;
+  letter-spacing: 0.1em;
+  font-size: 90%;
+  color: color-mix(
+    in oklab,
+    var(--color-primary-light) 75%,
+    var(--color-primary-dark)
+  );
 }
-
+/* NAVBAR */
 #navbar {
   backdrop-filter: blur(16px) hue-rotate(7deg);
   -webkit-backdrop-filter: blur(16px) hue-rotate(7deg);
@@ -87,6 +93,26 @@ main {
   box-shadow: 0 2px 20px color-mix(var(--color-accent-aqua) 5%, transparent);
   height: 10dvh;
 }
+h1,
+nav {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-primary-light);
+}
+#offcanvas-toggle {
+  backdrop-filter: inherit;
+  -webkit-backdrop-filter: inherit;
+  font-size: 160%;
+  font-family: var(--font-display);
+  font-weight: 900;
+  &:hover {
+    box-shadow: 0 0 10px color-mix(var(--color-accent-sky) 35%, transparent);
+    &:active {
+      border: 1px solid var(--color-accent-aqua);
+    }
+  }
+}
+/* OFFCANVAS */
 #offcanvas {
   background: color-mix(var(--color-primary-dark) 15%, transparent);
   backdrop-filter: blur(40px);
@@ -109,7 +135,8 @@ main {
   margin-block-start: 0;
   letter-spacing: 0.02em;
   justify-content: space-evenly;
-  & .menu-item, .submenu-item {
+  & .menu-item,
+  .submenu-item {
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
     text-decoration: none;
@@ -119,44 +146,27 @@ main {
   & .menu-item {
     font-family: var(--font-display);
     font-weight: 400;
-      font-size: 1.6rem;
-  }    
+    font-size: 1.6rem;
+  }
   & .submenu-item {
     font-family: var(--font-body);
     font-weight: 300;
     font-size: 1.2rem;
     letter-spacing: 0.07em;
-
   }
 }
-#offcanvas-toggle {
-  backdrop-filter: inherit;
-  -webkit-backdrop-filter: inherit;
-  font-size: 160%;
-  font-family: var(--font-display);
-  font-weight: 900;
-  &:hover {
-    box-shadow: 0 0 10px color-mix(var(--color-accent-sky) 35%, transparent);
-    &:active {
-      border: 1px solid var(--color-accent-aqua);
-    }
+/* MODALS */
+#about *,
+#methodology * {
+  background: color-mix(var(--color-primary-dark) 15%, transparent);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  & .modal-content {
+    box-shadow: 0 0 60px color-mix(var(--color-accent-sky) 35%, transparent);
   }
-}
-h1,
-nav {
-  font-family: var(--font-display);
-  font-weight: 700;
-  color: var(--color-primary-light);
-}
-footer {
-  position: sticky;
-  bottom: 0;
-  height: 2dvh;
-  font-family: var(--font-body);
-  text-align: center;
-  letter-spacing: 0.1em;
-  font-size: 90%;
-  color: color-mix(in oklab, var(--color-primary-light) 75%, var(--color-primary-dark));
+  & button.btn-close {
+    background-color: inherit;
+  }
 }
 /* ACCESSIBILITY */
 :focus-visible {
