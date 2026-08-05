@@ -9,6 +9,9 @@ const welcomeScreen = $id("welcome-screen");
 const quizScreen = $id("quiz-screen");
 const startAssessmentButton = $id("start-assessment-button");
 const quizHeading = $id("quiz-heading");
+const questionCounter = $id("question-counter");
+const progressBar = $id("progress-bar");
+const quizProgressContainer = $id("quiz-progress-container");
 
 let currentQuestionIndex = 0;
 let userAnswers = []; // stores ansId per question index
@@ -25,6 +28,26 @@ function startAssessment() {
 
 if (startAssessmentButton) {
   startAssessmentButton.addEventListener("click", startAssessment);
+}
+
+function updateProgress(index) {
+  if (!questionCounter || !progressBar || activeQuestions.length === 0) {
+    return;
+  }
+
+  const currentQuestionNumber = index + 1;
+  const totalQuestions = activeQuestions.length;
+  const progressPercentage = (currentQuestionNumber / totalQuestions) * 100;
+
+  questionCounter.textContent = `Question ${currentQuestionNumber} of ${totalQuestions}`;
+
+  progressBar.style.width = `${progressPercentage}%`;
+  progressBar.textContent = `${Math.round(progressPercentage)}%`;
+
+  progressBar.setAttribute(
+    "aria-valuenow",
+    String(Math.round(progressPercentage)),
+  );
 }
 
 // Choose a personality label for display: use option.type if present,
@@ -49,6 +72,9 @@ function getPersonalityType(optionObj) {
 }
 
 function startQuiz() {
+  if (quizProgressContainer) {
+    quizProgressContainer.hidden = false;
+  }
   currentQuestionIndex = 0;
   userAnswers = [];
 
@@ -73,6 +99,8 @@ function renderQuestion(index) {
   const question = activeQuestions[index];
   const main = $id("quiz-content");
   if (!main || !question) return;
+
+  updateProgress(index);
 
   // build option buttons
   let optionsHtml = "";
@@ -121,6 +149,9 @@ function handleAnswer(ansId) {
 }
 
 function showResults() {
+  if (quizProgressContainer) {
+    quizProgressContainer.hidden = true;
+  }
   const main = $id("quiz-content");
   if (!main) return;
 
@@ -135,13 +166,18 @@ function showResults() {
     let optionObj = null;
     for (let optIndex = 0; optIndex < question.options.length; optIndex++) {
       const candidate = question.options[optIndex];
-      if ((candidate.ansId && candidate.ansId === selectedAnsId) || (candidate.ansID && candidate.ansID === selectedAnsId)) {
+      if (
+        (candidate.ansId && candidate.ansId === selectedAnsId) ||
+        (candidate.ansID && candidate.ansID === selectedAnsId)
+      ) {
         optionObj = candidate;
         break;
       }
     }
 
-    const choice = optionObj ? (optionObj.text || optionObj.answer) : "(no answer)";
+    const choice = optionObj
+      ? optionObj.text || optionObj.answer
+      : "(no answer)";
 
     // aggregate traits
     const traits = optionObj && (optionObj.vals || optionObj.traits);
@@ -151,7 +187,8 @@ function showResults() {
         scores[trait] = (scores[trait] || 0) + v;
       }
     } else {
-      const typeLabel = optionObj && optionObj.type ? optionObj.type : "Unknown";
+      const typeLabel =
+        optionObj && optionObj.type ? optionObj.type : "Unknown";
       scores[typeLabel] = (scores[typeLabel] || 0) + 1;
     }
 
@@ -198,7 +235,8 @@ function getResults(scores) {
   }
 
   let overall = winners.length === 1 ? winners[0] : "Balanced";
-  if (overall === "Unknown" && Object.keys(scores).length > 1) overall = "Balanced";
+  if (overall === "Unknown" && Object.keys(scores).length > 1)
+    overall = "Balanced";
   return { overall, winners, scores };
 }
 
