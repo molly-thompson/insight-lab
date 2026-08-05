@@ -21,7 +21,7 @@ Brief overview of the project.
 ### Scope
 
 #### Content Requirements
-
+35 multiple choice questions that ask how the user would react when placed in a ertain situation. A results page compiling the results and allocating the user one of the 16 myers briggs personality types. The questions will have an element of randomness so as to prevent the same questions being asked everytime.
 ##### User Stories
 
 | User Story | Feature | Acceptance Criteria |
