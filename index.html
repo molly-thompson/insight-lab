@@ -1,194 +1,183 @@
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="InsightLab: A Behavioral Analysis Assessment"
-    />
-    <meta name="color-scheme" content="dark only" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="assets/favicon/favicon-96x96.png"
-      sizes="96x96"
-    />
-    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/favicon/apple-touch-icon.png"
-    />
-    <meta name="apple-mobile-web-app-title" content="InsightLab" />
-    <title>InsightLab</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap 5.3.x -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="assets/css/globals.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/components.css" type="text/css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="InsightLab: A Behavioral Analysis Assessment" />
+  <meta name="color-scheme" content="dark only" />
+  <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="InsightLab" />
+  <title>InsightLab</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap"
+    rel="stylesheet" />
+  <!-- Bootstrap 5.3.x -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <link rel="stylesheet" href="assets/css/globals.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/components.css" type="text/css" />
+</head>
 
 <body>
-    <!-- Methodology modal -->
-    <div class="modal fade container" id="methodology" tabindex="-1" aria-labelledby="methodology-title"
-        aria-hidden="true" aria-label="Main navigation">
-        <div class="modal-dialog row justify-content-center">
-            <div class="modal-content col col-12 col-md-9">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="methodology-title">Methodology</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&#2716;</button>
-                </div>
-                <p class="modal-body">
-                    Your assessment is analysed using a weighted scoring model designed to identify patterns in your
-                    responses.
-
-                    Each answer contributes differently to several behavioural dimensions. For example, a single
-                    response may influence
-                    traits such as:
-
-                    Analytical Thinking
-                    Collaboration
-                    Adaptability
-                    Confidence
-                    Curiosity
-                    Planning
-
-                    As you progress through the assessment, these figures are continually updated to build an overall
-                    behavioural
-                    profile. The platform uses these dimensions to determine your behavioural patterns and
-                    highest-scoring characteristics. Then, your report is generated to provide you personalised feedback
-                    and insight into your behavioural traits.
-                </p>
-            </div>
+  <!-- Methodology modal -->
+  <div class="modal fade container" id="methodology" tabindex="-1" aria-labelledby="methodology-title"
+    aria-hidden="true" aria-label="Main navigation">
+    <div class="modal-dialog row justify-content-center">
+      <div class="modal-content col col-12 col-md-9">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="methodology-title">Methodology</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&#2716;</button>
         </div>
+        <p class="modal-body">
+          Your assessment is analysed using a weighted scoring model designed to identify patterns in your
+          responses.
+
+          Each answer contributes differently to several behavioural dimensions. For example, a single
+          response may influence
+          traits such as:
+
+          Analytical Thinking
+          Collaboration
+          Adaptability
+          Confidence
+          Curiosity
+          Planning
+
+          As you progress through the assessment, these figures are continually updated to build an overall
+          behavioural
+          profile. The platform uses these dimensions to determine your behavioural patterns and
+          highest-scoring characteristics. Then, your report is generated to provide you personalised feedback
+          and insight into your behavioural traits.
+        </p>
+      </div>
     </div>
-  <body>
-    <!-- Navbar -->
-    <nav
-      id="navbar"
-      class="navbar navbar-expand-lg"
-      aria-label="Main navigation"
-    >
-      <div class="container-fluid">
-        <a class="navbar-brand ps-1" href="#hero">
-          <h1>InsightLab</h1>
-        </a>
-        <button
-          id="offcanvas-toggle"
-          class="btn"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvas"
-          aria-controls="offcanvas"
-        >
-          &#9776;
+  </div>
+  <!-- About InsightLab  modal -->
+  <div class="modal fade" id="methodology" tabindex="-1" aria-labelledby="methodology-title" aria-hidden="true"
+    aria-label="Main navigation">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="methodology-title">About</h1>
+          <button type="button" id="close-offcanvas" class="btn-close" data-bs-dismiss="modal"
+            aria-label="Close"></button>
+        </div>
+        <p class="modal-body">
+
+          <i>InsightLab is a demonstration project created for educational purposes. Assessment results are
+            illustrative only and
+            should not be interpreted as professional psychological or behavioural advice.</i>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg" aria-label="Main navigation">
+    <div class="container-fluid">
+      <a class="navbar-brand ps-1" href="#hero">
+        <h1>InsightLab</h1>
+      </a>
+      <button id="offcanvas-toggle" class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+        aria-controls="offcanvas">
+        &#9776;
+      </button>
+    </div>
+  </nav>
+  <!-- Offcanvas -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel"
+    aria-label="Secondary navigation">
+    <div class="offcanvas-header">
+      <h2 class="offcanvas-title" id="offcanvasLabel">InsightLab</h2>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul id="offcanvas-menu">
+        <li>
+          <a href="#start" class="menu-item">Assessments</a>
+          <ul>
+            <li>
+              <a href="#start" class="submenu-item">Behavioural Analysis</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span data-bs-dismiss="offcanvas">
+            <a role="button" data-bs-toggle="modal" data-bs-target="#methodology" class="menu-item">
+              Methodology
+            </a>
+          </span>
+        </li>
+        <li>
+          <span data-bs-dismiss="offcanvas">
+            <a role="button" data-bs-toggle="modal" data-bs-target="#about" class="menu-item">
+              About InsightLab
+            </a>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="noise"></div>
+  <div class="grid-overlay"></div>
+  <!-- Main Page Content -->
+  <main id="hero">
+    <!-- Welcome screen -->
+
+    <section id="welcome-screen" class="container py-5" aria-labelledby="welcome-heading">
+      <div class="welcome-content d-flex flex-column justify-content-lg-center align-items-center text-center mx-auto">
+        <p class="welcome-tag text-uppercase mb-3">
+          behavioral analysis assessment
+        </p>
+
+        <h1 id="welcome-heading" class="display-1 mb-4">
+          Decode what drives your people
+        </h1>
+
+        <p class="welcome-intro lead mx-auto mb-4">
+          Understand your behavioural traits through a short personality
+          assessment designed to reveal your unique profile.
+        </p>
+
+        <ul class="assessment-details d-flex flex-wrap justify-content-center gap-3 mb-4"
+          aria-label="Assessment details">
+          <li class="assessment-pill">30 questions</li>
+          <li class="assessment-pill">7-10 minutes</li>
+          <li class="assessment-pill">Instant results</li>
+        </ul>
+
+        <button id="start-assessment-button" class="btn btn-lg start-assessment-button" type="button">
+          Start Assessment
         </button>
       </div>
-    </nav>
-    <!-- Offcanvas -->
-    <div
-      class="offcanvas offcanvas-end"
-      tabindex="-1"
-      id="offcanvas"
-      aria-labelledby="offcanvasLabel"
-    >
-      <div class="offcanvas-header">
-        <h3 class="offcanvas-title" id="offcanvasLabel">InsightLab</h3>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        ></button>
+    </section>
+
+    <!-- Quiz Section -->
+
+    <section id="quiz-screen" class="container py-5" aria-labelledby="quiz-heading" hidden>
+      <h2 id="quiz-heading" tabindex="-1">Personality assessment</h2>
+
+      <div id="quiz-content">
+        <!-- Quiz content will be rendered here -->
       </div>
-      <div class="offcanvas-body">...</div>
-    </div>
-    <div class="noise"></div>
-    <div class="grid-overlay"></div>
-    <!-- Page content -->
-    <div id="content-wrapper">
-      <!-- Main Page Content -->
-      <main id="hero">
-        <!-- Welcome screen -->
+    </section>
+  </main>
 
-        <section
-          id="welcome-screen"
-          class="container py-5"
-          aria-labelledby="welcome-heading"
-        >
-          <div
-            class="welcome-content d-flex flex-column justify-content-lg-center align-items-center text-center mx-auto"
-          >
-            <p class="welcome-tag text-uppercase mb-3">
-              behavioral analysis assessment
-            </p>
+  <!-- Footer -->
+  <footer class="mt-auto"><small>&copy; InsightLab 2026.</small></footer>
+  </div>
 
-            <h1 id="welcome-heading" class="display-1 mb-4">
-              Decode what drives your people
-            </h1>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script type="module" src="assets/js/ui.js"></script>
+</body>
 
-            <p class="welcome-intro lead mx-auto mb-4">
-              Understand your behavioural traits through a short personality
-              assessment designed to reveal your unique profile.
-            </p>
-
-            <ul
-              class="assessment-details d-flex flex-wrap justify-content-center gap-3 mb-4"
-              aria-label="Assessment details"
-            >
-              <li class="assessment-pill">30 questions</li>
-              <li class="assessment-pill">7–10 minutes</li>
-              <li class="assessment-pill">Instant results</li>
-            </ul>
-
-            <button
-              id="start-assessment-button"
-              class="btn btn-lg start-assessment-button"
-              type="button"
-            >
-              Start Assessment
-            </button>
-          </div>
-        </section>
-
-        <!-- Quiz Section -->
-
-        <section
-          id="quiz-screen"
-          class="container py-5"
-          aria-labelledby="quiz-heading"
-          hidden
-        >
-          <h2 id="quiz-heading" tabindex="-1">Personality assessment</h2>
-
-          <div id="quiz-content">
-            <!-- Quiz content will be rendered here -->
-          </div>
-        </section>
-      </main>
-
-      <!-- Footer -->
-      <footer class="mt-auto"><small>&copy; InsightLab 2026.</small></footer>
-    </div>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-    <script type="module" src="assets/js/ui.js"></script>
-  </body>
 </html>
