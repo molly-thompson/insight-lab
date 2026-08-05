@@ -12,6 +12,7 @@ const quizHeading = $id("quiz-heading");
 const questionCounter = $id("question-counter");
 const progressBar = $id("progress-bar");
 const quizProgressContainer = $id("quiz-progress-container");
+const homeLogo = $id("home-logo");
 
 let currentQuestionIndex = 0;
 let userAnswers = []; // stores ansId per question index
@@ -24,6 +25,23 @@ function startAssessment() {
   quizScreen.hidden = false;
   if (quizHeading) quizHeading.focus();
   startQuiz();
+}
+if (homeLogo) {
+  homeLogo.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    currentQuestionIndex = 0;
+    userAnswers = [];
+    activeQuestions = [];
+
+    welcomeScreen.hidden = false;
+    quizScreen.hidden = true;
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 }
 
 if (startAssessmentButton) {
