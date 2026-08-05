@@ -161,14 +161,43 @@
 
     <!-- Quiz Section -->
 
-    <section id="quiz-screen" class="container py-5" aria-labelledby="quiz-heading" hidden>
-      <h2 id="quiz-heading" tabindex="-1">Personality assessment</h2>
+    <section
+  id="quiz-screen"
+  class="container py-5"
+  aria-labelledby="quiz-heading"
+  hidden
+>
+  <h2 id="quiz-heading" tabindex="-1">Personality assessment</h2>
 
-      <div id="quiz-content">
-        <!-- Quiz content will be rendered here -->
+  <!-- Quiz progress -->
+  <div
+    id="quiz-progress-container"
+    class="quiz-progress-container mt-4 mb-4"
+  >
+    <p id="question-counter" class="mb-2">
+      Question 1 of 30
+    </p>
+
+    <div class="progress">
+      <div
+        id="progress-bar"
+        class="progress-bar"
+        role="progressbar"
+        aria-label="Assessment progress"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+        style="width: 0%"
+      >
+        0%
       </div>
-    </section>
-  </main>
+    </div>
+  </div>
+
+  <div id="quiz-content">
+    <!-- Quiz content will be rendered here -->
+  </div>
+</section>
 
   <!-- Footer -->
   <footer class="mt-auto"><small>&copy; InsightLab 2026.</small></footer>
