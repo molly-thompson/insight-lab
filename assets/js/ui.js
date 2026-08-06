@@ -61,7 +61,7 @@ function updateProgress(index) {
   }
 
   const currentQuestionNumber = index + 1;
-  const progressPercentage = (currentQuestionNumber / totalQuestions) * 100;
+  const progressPercentage = ((currentQuestionNumber-1) / totalQuestions) * 100;
 
   questionCounter.textContent = `Question ${currentQuestionNumber} of ${totalQuestions}`;
   progressBar.style.width = `${progressPercentage}%`;
@@ -72,7 +72,6 @@ function updateProgress(index) {
   );
 }
 //capitalising the results labels
-
 function capitalizeLabel(value) {
   if (typeof value !== "string" || value.length === 0) return value;
   return value.charAt(0).toUpperCase() + value.slice(1);
@@ -163,14 +162,14 @@ function showResults() {
       : capitalizeLabel(results.overall);
 
   main.innerHTML = `
-    <section class="quiz-card results-card">
+    <section class="quiz-card">
       <h2>Results</h2>
       <p><strong>Overall:</strong> ${overallLabel}</p>
       <div>
         <h3>Scores</h3>
         <ul>${scoresHtml}</ul>
       </div>
-      <div class="summary-section">
+      <div>
         <h3>Answers</h3>
         <ul>${summaryHtml}</ul>
       </div>
