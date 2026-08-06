@@ -124,3 +124,11 @@ export function getResults() {
     summary,
   };
 }
+
+// expose current quiz state for consumers that need raw questions/answers
+export function getQuizState() {
+  return {
+    activeQuestions: Array.isArray(activeQuestions) ? activeQuestions.slice() : [],
+    userAnswers: Array.isArray(userAnswers) ? userAnswers.slice() : [],
+  };
+}
