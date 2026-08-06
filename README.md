@@ -1,6 +1,6 @@
 # Project Title
 
-Brief overview of the project.
+InsightLab is an interactive behavioural analysis web application developed as part of a collaborative JavaScript hackathon. Users complete a series of scenario-based multiple-choice questions before receiving a personalised behavioural profile based on their responses. The application combines a modern, responsive interface with dynamic JavaScript functionality to create an engaging and accessible assessment experience.
 
 [View the deployed project](https://qasim5259.github.io/insight-lab).
 
@@ -21,11 +21,13 @@ Brief overview of the project.
 ### Scope
 
 #### Content Requirements
+
 35 multiple choice questions that ask how the user would react when placed in a ertain situation. A results page compiling the results and allocating the user one of the 16 myers briggs personality types. The questions will have an element of randomness so as to prevent the same questions being asked everytime.
+
 ##### User Stories
 
 | User Story | Feature | Acceptance Criteria |
-| --- | --- | --- | --- |
+| ---------- | ------- | ------------------- |
 
 See **[Features](#features)** below.
 
@@ -77,7 +79,6 @@ The overall impact is an approachable, clean & organised interface.
 
 ![The InsightLab body font](documentation/body.png)
 
-
 #### Utility Font
 
 ![The InsightLab utility font](documentation/utility.png)
@@ -90,7 +91,7 @@ This monospaced, technical font is well suited to conveying the data-driven natu
 ## Features
 
 | Feature | Image | User Value |
-| --- | --- | --- | --- |
+| ------- | ----- | ---------- |
 
 ## Tools & Technologies
 
@@ -103,7 +104,7 @@ This monospaced, technical font is well suited to conveying the data-driven natu
 ### Frameworks & Libraries
 
 - Bootstrap 5.3.x
-- *************8 ICONS
+- ******\*******8 ICONS
 
 ### Version Control & Deployment
 
@@ -137,7 +138,7 @@ Note key interventions
 
 ### Additional Technologies
 
-- Bash Scripting *************8 REMOVE IF NA
+- Bash Scripting ******\*******8 REMOVE IF NA
 
 ## Testing
 
@@ -145,8 +146,9 @@ Note key interventions
 
 #### User Story Acceptance Criteria
 
-| User Story | Acceptance Criteria | Testing
-| --- | --- | --- | --- |
+| User Story | Acceptance Criteria | Testing |
+| ---------- | ------------------- | ------- |
+
 Either Pass or a link to the Issue created as a result of the failure.
 
 #### Development vs Deployed
