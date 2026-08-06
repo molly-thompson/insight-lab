@@ -10,7 +10,9 @@ import {
   getCurrentIndex,
   answerCurrentQuestion,
   getResults,
+  getQuizState,
 } from "./modules/quiz-logic.js";
+import { presentResults } from "./modules/results.js";
 
 // small helper to get DOM elements
 function $id(id) {
@@ -24,6 +26,7 @@ const quizHeading = $id("quiz-heading");
 const questionCounter = $id("question-counter");
 const progressBar = $id("progress-bar");
 const quizProgressContainer = $id("quiz-progress-container");
+const resultsSection = $id("results");
 const homeLogo = $id("home-logo");
 
 // Show the quiz and start it
@@ -31,6 +34,7 @@ function startAssessment() {
   if (!welcomeScreen || !quizScreen) return;
   welcomeScreen.hidden = true;
   quizScreen.hidden = false;
+  if (resultsSection) resultsSection.hidden = true;
   if (quizHeading) quizHeading.focus();
   startQuiz();
 }
@@ -53,6 +57,8 @@ if (homeLogo) {
 if (startAssessmentButton) {
   startAssessmentButton.addEventListener("click", startAssessment);
 }
+
+document.addEventListener("quiz:restart", startAssessment);
 
 function updateProgress(index) {
   const totalQuestions = getQuestionCount();
@@ -134,50 +140,9 @@ function handleAnswer(ansId) {
   if (result.next) {
     renderQuestion();
   } else {
-    showResults();
+    const { activeQuestions, userAnswers } = getQuizState();
+    presentResults({ questions: activeQuestions, answers: userAnswers });
   }
 }
 
-function showResults() {
-  if (quizProgressContainer) {
-    quizProgressContainer.hidden = true;
-  }
-  const main = $id("quiz-content");
-  if (!main) return;
-
-  const results = getResults();
-
-  let scoresHtml = "";
-  for (const trait in results.scores) {
-    scoresHtml += `<li>${capitalizeLabel(trait)}: ${results.scores[trait]}</li>`;
-  }
-
-  let summaryHtml = "";
-  for (const item of results.summary) {
-    summaryHtml += `<li>Question ${item.questionNumber}: ${item.choice} <strong>(${capitalizeLabel(item.displayLabel)})</strong></li>`;
-  }
-
-  const overallLabel =
-    results.overall === "Balanced"
-      ? results.overall
-      : capitalizeLabel(results.overall);
-
-  main.innerHTML = `
-    <section class="quiz-card results-card">
-      <h2>Results</h2>
-      <p><strong>Overall:</strong> ${overallLabel}</p>
-      <div>
-        <h3>Scores</h3>
-        <ul>${scoresHtml}</ul>
-      </div>
-      <div class="summary-section">
-        <h3>Answers</h3>
-        <ul>${summaryHtml}</ul>
-      </div>
-      <button id="restart-quiz" class="btn btn-primary mt-3">Restart</button>
-    </section>
-  `;
-
-  const restart = $id("restart-quiz");
-  if (restart) restart.addEventListener("click", startQuiz);
-}
+// end quiz code
