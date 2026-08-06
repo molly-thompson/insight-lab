@@ -19,6 +19,12 @@ export function initializeQuiz(maxQuestions = 30) {
   userAnswers = [];
 }
 
+export function resetQuiz() {
+  activeQuestions = [];
+  currentQuestionIndex = 0;
+  userAnswers = [];
+}
+
 export function getCurrentQuestion() {
   return activeQuestions[currentQuestionIndex] || null;
 }
@@ -32,7 +38,6 @@ export function getCurrentIndex() {
 }
 
 export function answerCurrentQuestion(ansId) {
- 
   userAnswers[currentQuestionIndex] = ansId;
   if (currentQuestionIndex < activeQuestions.length - 1) {
     currentQuestionIndex += 1;
@@ -42,11 +47,9 @@ export function answerCurrentQuestion(ansId) {
 }
 
 function findOptionForAnswer(question, ansId) {
-
   return question.options.find(
     (opt) =>
-      (opt.ansId && opt.ansId === ansId) ||
-      (opt.ansID && opt.ansID === ansId),
+      (opt.ansId && opt.ansId === ansId) || (opt.ansID && opt.ansID === ansId),
   );
 }
 
@@ -92,7 +95,9 @@ export function getResults() {
     const question = activeQuestions[i];
     const selectedAnsId = userAnswers[i];
     const optionObj = findOptionForAnswer(question, selectedAnsId);
-    const choice = optionObj ? optionObj.text || optionObj.answer : "(no answer)";
+    const choice = optionObj
+      ? optionObj.text || optionObj.answer
+      : "(no answer)";
     const traits = optionObj && optionObj.vals;
 
     if (traits && typeof traits === "object") {
@@ -101,7 +106,8 @@ export function getResults() {
         scores[trait] = (scores[trait] || 0) + v;
       }
     } else {
-      const typeLabel = optionObj && optionObj.type ? optionObj.type : "Unknown";
+      const typeLabel =
+        optionObj && optionObj.type ? optionObj.type : "Unknown";
       scores[typeLabel] = (scores[typeLabel] || 0) + 1;
     }
 
@@ -118,4 +124,3 @@ export function getResults() {
     summary,
   };
 }
-

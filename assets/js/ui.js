@@ -1,5 +1,6 @@
 import {
   initializeQuiz,
+  resetQuiz,
   getCurrentQuestion,
   getQuestionCount,
   getCurrentIndex,
@@ -33,9 +34,7 @@ if (homeLogo) {
   homeLogo.addEventListener("click", function (event) {
     event.preventDefault();
 
-    currentQuestionIndex = 0;
-    userAnswers = [];
-    activeQuestions = [];
+    resetQuiz();
 
     welcomeScreen.hidden = false;
     quizScreen.hidden = true;
@@ -63,7 +62,10 @@ function updateProgress(index) {
   questionCounter.textContent = `Question ${currentQuestionNumber} of ${totalQuestions}`;
   progressBar.style.width = `${progressPercentage}%`;
   progressBar.textContent = `${Math.round(progressPercentage)}%`;
-  progressBar.setAttribute("aria-valuenow", String(Math.round(progressPercentage)));
+  progressBar.setAttribute(
+    "aria-valuenow",
+    String(Math.round(progressPercentage)),
+  );
 }
 
 function capitalizeLabel(value) {
@@ -76,7 +78,7 @@ function startQuiz() {
     quizProgressContainer.hidden = false;
   }
 
-   initializeQuiz();
+  initializeQuiz();
   renderQuestion();
 }
 
@@ -150,7 +152,10 @@ function showResults() {
     summaryHtml += `<li>Question ${item.questionNumber}: ${item.choice} <strong>(${capitalizeLabel(item.displayLabel)})</strong></li>`;
   }
 
-  const overallLabel = results.overall === "Balanced" ? results.overall : capitalizeLabel(results.overall);
+  const overallLabel =
+    results.overall === "Balanced"
+      ? results.overall
+      : capitalizeLabel(results.overall);
 
   main.innerHTML = `
     <section class="quiz-card">
@@ -171,4 +176,3 @@ function showResults() {
   const restart = $id("restart-quiz");
   if (restart) restart.addEventListener("click", startQuiz);
 }
-
