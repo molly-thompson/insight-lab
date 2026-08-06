@@ -2,9 +2,9 @@
 
 InsightLab is an interactive behavioural analysis web application developed as part of a collaborative JavaScript hackathon. Users complete a series of scenario-based multiple-choice questions before receiving a personalised behavioural profile based on their responses. The application combines a modern, responsive interface with dynamic JavaScript functionality to deliver an engaging and accessible assessment experience.
 
-[View the deployed project](https://qasim5259.github.io/insight-lab).
+[View the deployed project](https://qasim5259.github.io/Insight-lab/).
 
-![PROJECT NAME landing page mocked up on multiple screen sizes](documentation/ AMIRESPONSIVE IMG)
+![PROJECT NAME landing page mocked up on multiple screen sizes](documentation/responsive.png)
 
 [Interact with the site on different screen sizes](https://fireship.dev/amiresponsive?url=https://qasim5259.github.io/insight-lab).
 
