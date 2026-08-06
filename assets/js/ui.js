@@ -67,7 +67,7 @@ function updateProgress(index) {
   }
 
   const currentQuestionNumber = index + 1;
-  const progressPercentage = (currentQuestionNumber / totalQuestions) * 100;
+  const progressPercentage = ((currentQuestionNumber-1) / totalQuestions) * 100;
 
   questionCounter.textContent = `Question ${currentQuestionNumber} of ${totalQuestions}`;
   progressBar.style.width = `${progressPercentage}%`;
@@ -78,7 +78,6 @@ function updateProgress(index) {
   );
 }
 //capitalising the results labels
-
 function capitalizeLabel(value) {
   if (typeof value !== "string" || value.length === 0) return value;
   return value.charAt(0).toUpperCase() + value.slice(1);
