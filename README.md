@@ -388,6 +388,17 @@ The responsive design adapts the spacing and layout across desktop, tablet and m
 - Adobe Express: used to design favicon
 
 ### AI Contributions
+Mohammed: 
+
+Design Contributions:
+Microsoft copilot was used to generate the sample questions for the quiz itself. The AI was prompted with the idea for the quiz and returned a range of 30 ideas with responses to the questions which were then amended for suitability purposes.
+
+Debugging contributions: 
+Copilot was used to amend certain visual glitches and inconsistencies. It also was used to explain certain concepts for me and walk me through how those concepts were applied to our project, such as the inserting impermanent components into the DOM and then ultimately into the index.html.
+
+Code Contributions: 
+Copilot was used to formulacome up with the random shuffle for the question pool and it used the fisher yates algorithm for that purpose. The AI also contributed code with regards to the results tallying and failsafing of the quiz element.
+ 
 
 ### AI Tools
 
