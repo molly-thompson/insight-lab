@@ -387,6 +387,5 @@ export const questions = [
   },
 ];
 
-// NOTE: `defaultOptionTypes` and `optionTypeMap` removed —
-// assign per-option `vals` or `type` directly on each answer.
+
 
