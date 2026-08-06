@@ -21,7 +21,7 @@ Brief overview of the project.
 ### Scope
 
 #### Content Requirements
-35 multiple choice questions that ask how the user would react when placed in a ertain situation. A results page compiling the results and allocating the user one of the 16 myers briggs personality types. The questions will have an element of randomness so as to prevent the same questions being asked everytime.
+30 multiple choice questions from a pool of 35 that are shuffled randomly that ask how the user would react when placed in a ertain situation. A results page compiling the results and allocating the user their predominant personality trait.
 ##### User Stories
 
 | User Story | Feature | Acceptance Criteria |
@@ -116,6 +116,17 @@ This monospaced, technical font is well suited to conveying the data-driven natu
 - Adobe Express: used to design favicon
 
 ### AI Contributions
+Mohammed: 
+
+Design Contributions:
+Microsoft copilo was used to generate the sample questions for the quiz itself. The AI was prompted with the idea for the quiz and returned a range of 30 ideas with responses to the questions which were then amended for suitability purposes.
+
+Debugging contributions: 
+Copilot was used to amend certain visual glitches and inconsistencies. It also was used to explain certain concepts for me and walk me through how those concepts were applied to our project, such as the inserting impermanent components into the DOM and then ultimately into the index.html.
+
+Code Contributions: 
+Copilot was used to formulacome up with the random shuffle for the question pool and it used the fisher yates algorithm for that purpose. The AI also contributed code with regards to the results tallying and failsafing of the quiz element.
+ 
 
 ### AI Tools
 
