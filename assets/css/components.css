@@ -86,6 +86,9 @@
   transform: scale(0.98);
 }
 
+
+
+
 /* Quiz progress bar */
 
 .quiz-progress-container {
@@ -118,6 +121,54 @@
   color: var(--color-primary-light);
   margin-bottom: 0.75rem;
 }
+/* quiz styles */
+
+.quiz-option {
+  color: #fff;
+}
+
+.results-card {
+  text-align: center ;
+}
+
+.results-card h2,
+.results-card h3,
+.results-card p,
+.results-card button {
+  text-align: center;
+}
+
+.results-card > div {
+  margin: 0 auto 1.5rem;
+  max-width: min(100%, 40rem);
+}
+.summary-section {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto 1.5rem;
+}
+
+.summary-section ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0 auto !important;
+  width: 100%;
+  text-align: left;
+}
+.results-card ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  display: inline-block !important;
+}
+
+.results-card li {
+  padding: 0.25rem 0;
+  text-align: center;
+}
+
+/*media queries*/
 
 @media (prefers-reduced-motion: reduce) {
   .progress-bar {

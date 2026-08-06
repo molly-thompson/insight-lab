@@ -1,3 +1,7 @@
+
+
+//quiz logic
+
 import {
   initializeQuiz,
   resetQuiz,
@@ -67,6 +71,7 @@ function updateProgress(index) {
     String(Math.round(progressPercentage)),
   );
 }
+//capitalising the results labels
 
 function capitalizeLabel(value) {
   if (typeof value !== "string" || value.length === 0) return value;
@@ -158,14 +163,14 @@ function showResults() {
       : capitalizeLabel(results.overall);
 
   main.innerHTML = `
-    <section class="quiz-card">
+    <section class="quiz-card results-card">
       <h2>Results</h2>
       <p><strong>Overall:</strong> ${overallLabel}</p>
       <div>
         <h3>Scores</h3>
         <ul>${scoresHtml}</ul>
       </div>
-      <div>
+      <div class="summary-section">
         <h3>Answers</h3>
         <ul>${summaryHtml}</ul>
       </div>
