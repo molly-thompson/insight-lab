@@ -320,7 +320,8 @@ InsightLab's visual identity was designed to reflect the values of a modern beha
 
 #### Colour
 
-![The InsightLab colour scheme](documentation/colour.png)
+coolors link to colour palette: https://coolors.co/f5f6f4-0b1120-38bdf8-67e8f9
+
 The colour scheme for InsightLabs provides a calm, focused & professional palette. The dark interface reduces visual clutter, keeps attention on the content, and creates a premium aesthetic associated with modern analytics software.
 
 Gradations of these tones are used to allow the UI to have depth, without increasing visual complexity, brighter accent colours are used to provide balance and depth. The aqua accent creates the sense of technology and intelligence; which is well paired with the reliability and trust of the deep navy base.
@@ -408,6 +409,7 @@ The responsive design adapts the spacing and layout across desktop, tablet and m
 - GitHub Copilot was useful in planning and executing code refactoring, to increase separation of concern between the quiz & results sections
 - Chat GPT was used to create the CSS code for the background grid, radial glow & vignette effect
 - Chat GPT was useful in creating code to improve the appearance of the AmCharts for the results section
+- Chat GPT was used in implementing and refining the progress bar feature.
 
 #### Debugging Contributions
 
