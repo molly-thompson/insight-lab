@@ -5,10 +5,10 @@ export const questions = [
     title: "Question 1",
     text: "You arrive at a party and realize you don’t know many people there. What do you do?",
     options: [
-      { ansId: "1A", text: "Walk in, introduce yourself, and start talking to someone", vals: { sociability: 5, impulsiveness: 3, planning: 0, empathy: 1, logic: 1 } },
-      { ansId: "1B", text: "Stay near the edge, observe for a while, and warm up gradually", vals: { sociability: 2, impulsiveness: 1, planning: 1, empathy: 2, logic: 1 } },
-      { ansId: "1C", text: "Find one familiar person and stick close to them", vals: { sociability: 3, impulsiveness: 1, planning: 1, empathy: 3, logic: 0 } },
-      { ansId: "1D", text: "Leave early if it feels too awkward", vals: { sociability: 0, impulsiveness: -1, planning: 0, empathy: 1, logic: 0 } },
+      { ansId: "1A", text: "Walk in, introduce yourself, and start talking to someone", vals: { sociable: 5, impulsive: 3, planner: 0, empathic: 1, logical: 1 } },
+      { ansId: "1B", text: "Stay near the edge, observe for a while, and warm up gradually", vals: { sociable: 2, impulsive: 1, planner: 1, empathic: 2, logical: 1 } },
+      { ansId: "1C", text: "Find one familiar person and stick close to them", vals: { sociable: 3, impulsive: 1, planner: 1, empathic: 3, logical: 0 } },
+      { ansId: "1D", text: "Leave early if it feels too awkward", vals: { sociable: 0, impulsive: -1, planner: 0, empathic: 1, logical: 0 } },
     ],
   },
   {
@@ -16,10 +16,10 @@ export const questions = [
     title: "Question 2",
     text: "Your manager gives you an unexpected task right before a deadline. How do you respond?",
     options: [
-      { ansId: "2A", text: "Jump straight into it and figure it out as you go", vals: { impulsiveness: 4, sociability: 1, planning: 0, empathy: 0, logic: 1 } },
-      { ansId: "2B", text: "Pause to organize your thoughts and make a plan", vals: { planning: 4, logic: 3, impulsiveness: 0, empathy: 0, sociability: 0 } },
-      { ansId: "2C", text: "Ask for clarification and prioritize what matters most", vals: { empathy: 2, planning: 2, logic: 1, impulsiveness: 0, sociability: 0 } },
-      { ansId: "2D", text: "Feel stressed and hope it will somehow work out", vals: { empathy: 1, planning: 0, impulsiveness: -1, sociability: 0, logic: 0 } },
+      { ansId: "2A", text: "Jump straight into it and figure it out as you go", vals: { impulsive: 4, sociable: 1, planner: 0, empathic: 0, logical: 1 } },
+      { ansId: "2B", text: "Pause to organize your thoughts and make a plan", vals: { planner: 4, logical: 3, impulsive: 0, empathic: 0, sociable: 0 } },
+      { ansId: "2C", text: "Ask for clarification and prioritize what matters most", vals: { empathic: 2, planner: 2, logical: 1, impulsive: 0, sociable: 0 } },
+      { ansId: "2D", text: "Feel stressed and hope it will somehow work out", vals: { empathic: 1, planner: 0, impulsive: -1, sociable: 0, logical: 0 } },
     ],
   },
   {
@@ -27,10 +27,10 @@ export const questions = [
     title: "Question 3",
     text: "A friend cancels plans at the last minute. How do you react?",
     options: [
-      { ansId: "3A", text: "Send a quick message and suggest another plan", vals: { empathy: 4, sociability: 3, planning: 1, logic: 0, impulsiveness: 0 } },
-      { ansId: "3B", text: "Take it personally and spend time thinking about it", vals: { empathy: 2, planning: 2, logic: 2, impulsiveness: -1, sociability: 0 } },
-      { ansId: "3C", text: "Accept it and move on without making a big deal", vals: { sociability: 1, empathy: 1, planning: 0, logic: 1, impulsiveness: 0 } },
-      { ansId: "3D", text: "Ask why they canceled and whether something is wrong", vals: { logic: 3, empathy: 3, planning: 1, impulsiveness: 0, sociability: 0 } },
+      { ansId: "3A", text: "Send a quick message and suggest another plan", vals: { empathic: 4, sociable: 3, planner: 1, logical: 0, impulsive: 0 } },
+      { ansId: "3B", text: "Take it personally and spend time thinking about it", vals: { empathic: 2, planner: 2, logical: 2, impulsive: -1, sociable: 0 } },
+      { ansId: "3C", text: "Accept it and move on without making a big deal", vals: { sociable: 1, empathic: 1, planner: 0, logical: 1, impulsive: 0 } },
+      { ansId: "3D", text: "Ask why they canceled and whether something is wrong", vals: { logical: 3, empathic: 3, planner: 1, impulsive: 0, sociable: 0 } },
     ],
   },
   {
@@ -38,10 +38,10 @@ export const questions = [
     title: "Question 4",
     text: "You get a surprise invitation to a social event you weren’t expecting. What’s your first reaction?",
     options: [
-      { ansId: "4A", text: "Say yes immediately and make it happen" },
-      { ansId: "4B", text: "Think about it for a while before deciding" },
-      { ansId: "4C", text: "Check whether you already have other plans" },
-      { ansId: "4D", text: "Feel hesitant and wonder if you should go" },
+      { ansId: "4A", text: "Say yes immediately and make it happen", vals: { sociable: 4, impulsive: 3, planner: 1, empathic: 1, logical: 1 } },
+      { ansId: "4B", text: "Think about it for a while before deciding", vals: { planner: 3, logical: 2, empathic: 1, sociable: 1, impulsive: 0 } },
+      { ansId: "4C", text: "Check whether you already have other plans", vals: { planner: 3, logical: 2, empathic: 0, sociable: 0, impulsive: 0 } },
+      { ansId: "4D", text: "Feel hesitant and wonder if you should go", vals: { empathic: 1, planner: 0, logical: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -49,10 +49,10 @@ export const questions = [
     title: "Question 5",
     text: "You make a mistake at work and everyone notices. How do you handle it?",
     options: [
-      { ansId: "5A", text: "Admit it quickly and try to fix it" },
-      { ansId: "5B", text: "Stay quiet for a while and process your embarrassment" },
-      { ansId: "5C", text: "Deflect slightly and explain the situation" },
-      { ansId: "5D", text: "Worry about it for the rest of the day" },
+      { ansId: "5A", text: "Admit it quickly and try to fix it", vals: { logical: 2, planner: 2, empathic: 1, sociable: 1, impulsive: 0 } },
+      { ansId: "5B", text: "Stay quiet for a while and process your embarrassment", vals: { planner: 1, empathic: 1, logical: 1, sociable: 0, impulsive: -1 } },
+      { ansId: "5C", text: "Deflect slightly and explain the situation", vals: { logical: 1, empathic: 0, planner: 2, sociable: 1, impulsive: 0 } },
+      { ansId: "5D", text: "Worry about it for the rest of the day", vals: { empathic: 2, logical: 0, planner: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -60,10 +60,10 @@ export const questions = [
     title: "Question 6",
     text: "Someone cuts in line in front of you. What do you do?",
     options: [
-      { ansId: "6A", text: "Speak up calmly and point out the issue" },
-      { ansId: "6B", text: "Ignore it and let it go" },
-      { ansId: "6C", text: "Wait and see if the situation resolves itself" },
-      { ansId: "6D", text: "Feel annoyed but avoid making a scene" },
+      { ansId: "6A", text: "Speak up calmly and point out the issue", vals: { logical: 2, empathic: 1, planner: 0, sociable: 1, impulsive: 0 } },
+      { ansId: "6B", text: "Ignore it and let it go", vals: { empathic: 0, planner: 0, logical: 0, sociable: 0, impulsive: -1 } },
+      { ansId: "6C", text: "Wait and see if the situation resolves itself", vals: { planner: 1, logical: 1, empathic: 0, sociable: 0, impulsive: 0 } },
+      { ansId: "6D", text: "Feel annoyed but avoid making a scene", vals: { empathic: 1, planner: 0, logical: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -71,10 +71,10 @@ export const questions = [
     title: "Question 7",
     text: "You’re stuck in a long queue and the system is moving slowly. How do you react?",
     options: [
-      { ansId: "7A", text: "Get frustrated and complain" },
-      { ansId: "7B", text: "Stay patient and keep waiting" },
-      { ansId: "7C", text: "Try to find another way or ask for help" },
-      { ansId: "7D", text: "Start thinking about how annoying the whole situation is" },
+      { ansId: "7A", text: "Get frustrated and complain", vals: { impulsive: 3, empathic: 0, planner: 0, sociable: 1, logical: 0 } },
+      { ansId: "7B", text: "Stay patient and keep waiting", vals: { planner: 1, empathic: 1, logical: 0, sociable: 0, impulsive: -1 } },
+      { ansId: "7C", text: "Try to find another way or ask for help", vals: { logical: 2, planner: 2, sociable: 1, empathic: 0, impulsive: 0 } },
+      { ansId: "7D", text: "Start thinking about how annoying the whole situation is", vals: { logical: 1, empathic: 0, planner: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -82,10 +82,10 @@ export const questions = [
     title: "Question 8",
     text: "A coworker takes credit for an idea you shared. How do you respond?",
     options: [
-      { ansId: "8A", text: "Confront them directly and explain what happened" },
-      { ansId: "8B", text: "Mention it later in a calm and professional way" },
-      { ansId: "8C", text: "Let it go and focus on your own work" },
-      { ansId: "8D", text: "Feel upset but avoid bringing it up" },
+      { ansId: "8A", text: "Confront them directly and explain what happened", vals: { logical: 2, empathic: 1, planner: 1, sociable: 1, impulsive: 0 } },
+      { ansId: "8B", text: "Mention it later in a calm and professional way", vals: { planner: 2, empathic: 1, logical: 2, sociable: 0, impulsive: 0 } },
+      { ansId: "8C", text: "Let it go and focus on your own work", vals: { planner: 1, empathic: 1, logical: 1, sociable: 0, impulsive: 0 } },
+      { ansId: "8D", text: "Feel upset but avoid bringing it up", vals: { empathic: 1, logical: 0, planner: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -93,10 +93,10 @@ export const questions = [
     title: "Question 9",
     text: "You’re in a group discussion and nobody asks your opinion. What do you do?",
     options: [
-      { ansId: "9A", text: "Speak up confidently and contribute your view" },
-      { ansId: "9B", text: "Wait for the right moment and share it later" },
-      { ansId: "9C", text: "Assume they already know what you think" },
-      { ansId: "9D", text: "Feel overlooked and stay quiet" },
+      { ansId: "9A", text: "Speak up confidently and contribute your view", vals: { sociable: 4, logical: 2, empathic: 1, planner: 0, impulsive: 1 } },
+      { ansId: "9B", text: "Wait for the right moment and share it later", vals: { planner: 2, empathic: 1, logical: 1, sociable: 0, impulsive: 0 } },
+      { ansId: "9C", text: "Assume they already know what you think", vals: { logical: 1, planner: 0, empathic: 0, sociable: 0, impulsive: 0 } },
+      { ansId: "9D", text: "Feel overlooked and stay quiet", vals: { empathic: 1, planner: 0, logical: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -104,10 +104,10 @@ export const questions = [
     title: "Question 10",
     text: "Your phone battery dies in the middle of an important day. How do you react?",
     options: [
-      { ansId: "10A", text: "Panic briefly, then find a solution quickly" },
-      { ansId: "10B", text: "Adapt and make the best of it" },
-      { ansId: "10C", text: "Feel frustrated but stay calm" },
-      { ansId: "10D", text: "Get annoyed and think about how everything is going wrong" },
+      { ansId: "10A", text: "Panic briefly, then find a solution quickly", vals: { impulsive: 3, planner: 1, logical: 2, empathic: 0, sociable: 0 } },
+      { ansId: "10B", text: "Adapt and make the best of it", vals: { planner: 2, empathic: 1, logical: 1, sociable: 0, impulsive: 0 } },
+      { ansId: "10C", text: "Feel frustrated but stay calm", vals: { empathic: 1, logical: 1, planner: 0, sociable: 0, impulsive: -1 } },
+      { ansId: "10D", text: "Get annoyed and think about how everything is going wrong", vals: { empathic: 0, logical: 0, planner: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -115,10 +115,10 @@ export const questions = [
     title: "Question 11",
     text: "You walk into a room and everyone is already deep in conversation. What do you do?",
     options: [
-      { ansId: "11A", text: "Join in and start talking to someone" },
-      { ansId: "11B", text: "Stand back for a moment and observe" },
-      { ansId: "11C", text: "Find a small way to enter the conversation" },
-      { ansId: "11D", text: "Leave and come back later" },
+      { ansId: "11A", text: "Join in and start talking to someone", vals: { sociable: 4, empathic: 1, planner: 1, logical: 0, impulsive: 1 } },
+      { ansId: "11B", text: "Stand back for a moment and observe", vals: { planner: 2, logical: 1, empathic: 1, sociable: 0, impulsive: 0 } },
+      { ansId: "11C", text: "Find a small way to enter the conversation", vals: { sociable: 2, empathic: 2, planner: 1, logical: 0, impulsive: 0 } },
+      { ansId: "11D", text: "Leave and come back later", vals: { empathic: 0, planner: 0, logical: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -126,10 +126,10 @@ export const questions = [
     title: "Question 12",
     text: "Someone you care about seems distant lately. How do you approach them?",
     options: [
-      { ansId: "12A", text: "Ask directly what’s going on" },
-      { ansId: "12B", text: "Give them space and wait for them to open up" },
-      { ansId: "12C", text: "Try to make them feel comfortable and talk gently" },
-      { ansId: "12D", text: "Assume they need time and leave it alone" },
+      { ansId: "12A", text: "Ask directly what’s going on", vals: { empathic: 4, planner: 1, logical: 1, sociable: 1, impulsive: 0 } },
+      { ansId: "12B", text: "Give them space and wait for them to open up", vals: { empathic: 3, planner: 1, logical: 0, sociable: 0, impulsive: -1 } },
+      { ansId: "12C", text: "Try to make them feel comfortable and talk gently", vals: { empathic: 4, sociable: 2, planner: 1, logical: 0, impulsive: 0 } },
+      { ansId: "12D", text: "Assume they need time and leave it alone", vals: { empathic: 1, planner: 0, logical: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -137,10 +137,10 @@ export const questions = [
     title: "Question 13",
     text: "You receive constructive criticism that feels harsh. What’s your reaction?",
     options: [
-      { ansId: "13A", text: "Ask questions and try to understand it better" },
-      { ansId: "13B", text: "Feel hurt and replay it in your head" },
-      { ansId: "13C", text: "Take the useful parts and ignore the rest" },
-      { ansId: "13D", text: "Defend yourself immediately" },
+      { ansId: "13A", text: "Ask questions and try to understand it better", vals: { logical: 3, planner: 1, empathic: 1, sociable: 0, impulsive: 0 } },
+      { ansId: "13B", text: "Feel hurt and replay it in your head", vals: { empathic: 2, planner: 0, logical: 0, sociable: 0, impulsive: -1 } },
+      { ansId: "13C", text: "Take the useful parts and ignore the rest", vals: { logical: 2, planner: 2, empathic: 0, sociable: 0, impulsive: 0 } },
+      { ansId: "13D", text: "Defend yourself immediately", vals: { impulsive: 3, logical: 1, empathic: 0, sociable: 1, planner: 0 } },
     ],
   },
   {
@@ -148,10 +148,10 @@ export const questions = [
     title: "Question 14",
     text: "A plan you were excited about falls through at the last minute. How do you respond?",
     options: [
-      { ansId: "14A", text: "Quickly come up with a backup plan" },
-      { ansId: "14B", text: "Feel disappointed but adjust slowly" },
-      { ansId: "14C", text: "Accept it and try again another day" },
-      { ansId: "14D", text: "Get frustrated and shut down for a while" },
+      { ansId: "14A", text: "Quickly come up with a backup plan", vals: { planner: 4, logical: 2, impulsive: 1, empathic: 0, sociable: 0 } },
+      { ansId: "14B", text: "Feel disappointed but adjust slowly", vals: { empathic: 2, planner: 1, logical: 0, sociable: 0, impulsive: 0 } },
+      { ansId: "14C", text: "Accept it and try again another day", vals: { planner: 1, empathic: 1, logical: 1, sociable: 0, impulsive: 0 } },
+      { ansId: "14D", text: "Get frustrated and shut down for a while", vals: { empathic: 0, logical: 0, planner: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -159,10 +159,10 @@ export const questions = [
     title: "Question 15",
     text: "You’re asked to speak in front of a group unexpectedly. What do you do?",
     options: [
-      { ansId: "15A", text: "Step forward and speak confidently" },
-      { ansId: "15B", text: "Feel nervous but do it anyway" },
-      { ansId: "15C", text: "Ask for a minute to prepare" },
-      { ansId: "15D", text: "Avoid it if possible" },
+      { ansId: "15A", text: "Step forward and speak confidently", vals: { sociable: 4, logical: 2, planner: 1, empathic: 0, impulsive: 1 } },
+      { ansId: "15B", text: "Feel nervous but do it anyway", vals: { empathic: 1, planner: 1, logical: 0, sociable: 1, impulsive: 0 } },
+      { ansId: "15C", text: "Ask for a minute to prepare", vals: { planner: 2, logical: 1, empathic: 0, sociable: 0, impulsive: 0 } },
+      { ansId: "15D", text: "Avoid it if possible", vals: { empathic: 0, planner: 0, logical: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -170,10 +170,10 @@ export const questions = [
     title: "Question 16",
     text: "You notice a friend is struggling but doesn’t say it out loud. How do you respond?",
     options: [
-      { ansId: "16A", text: "Ask them directly if they’re okay" },
-      { ansId: "16B", text: "Offer support in a subtle, caring way" },
-      { ansId: "16C", text: "Wait for them to bring it up first" },
-      { ansId: "16D", text: "Try to cheer them up with distractions" },
+      { ansId: "16A", text: "Ask them directly if they’re okay", vals: { empathic: 4, planner: 1, logical: 1, sociable: 1, impulsive: 0 } },
+      { ansId: "16B", text: "Offer support in a subtle, caring way", vals: { empathic: 4, sociable: 2, planner: 1, logical: 0, impulsive: 0 } },
+      { ansId: "16C", text: "Wait for them to bring it up first", vals: { empathic: 2, planner: 0, logical: 0, sociable: 0, impulsive: -1 } },
+      { ansId: "16D", text: "Try to cheer them up with distractions", vals: { empathic: 2, sociable: 2, planner: 0, logical: 0, impulsive: 0 } },
     ],
   },
   {
@@ -181,10 +181,10 @@ export const questions = [
     title: "Question 17",
     text: "Your team is running late on a project and tension is rising. What do you do?",
     options: [
-      { ansId: "17A", text: "Take charge and organize the next steps" },
-      { ansId: "17B", text: "Stay calm and help people focus" },
-      { ansId: "17C", text: "Work quietly and keep your head down" },
-      { ansId: "17D", text: "Start worrying about the outcome" },
+      { ansId: "17A", text: "Take charge and organize the next steps", vals: { planner: 4, logical: 3, empathic: 1, sociable: 1, impulsive: 0 } },
+      { ansId: "17B", text: "Stay calm and help people focus", vals: { empathic: 2, planner: 2, logical: 1, sociable: 1, impulsive: 0 } },
+      { ansId: "17C", text: "Work quietly and keep your head down", vals: { planner: 1, logical: 1, empathic: 0, sociable: 0, impulsive: 0 } },
+      { ansId: "17D", text: "Start worrying about the outcome", vals: { empathic: 1, logical: 0, planner: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -192,10 +192,10 @@ export const questions = [
     title: "Question 18",
     text: "You get a message from someone you’ve been avoiding. How do you react?",
     options: [
-      { ansId: "18A", text: "Reply right away and get it over with" },
-      { ansId: "18B", text: "Read it, think about it, and respond later" },
-      { ansId: "18C", text: "Ignore it for a while and hope it passes" },
-      { ansId: "18D", text: "Feel uneasy and avoid engaging" },
+      { ansId: "18A", text: "Reply right away and get it over with", vals: { impulsive: 2, planner: 1, empathic: 1, logical: 0, sociable: 0 } },
+      { ansId: "18B", text: "Read it, think about it, and respond later", vals: { planner: 2, logical: 1, empathic: 1, sociable: 0, impulsive: 0 } },
+      { ansId: "18C", text: "Ignore it for a while and hope it passes", vals: { empathic: 0, planner: 0, logical: 0, sociable: 0, impulsive: -1 } },
+      { ansId: "18D", text: "Feel uneasy and avoid engaging", vals: { empathic: 1, logical: 0, planner: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -203,10 +203,10 @@ export const questions = [
     title: "Question 19",
     text: "You walk into a new class or workplace and everyone seems to know each other already. What do you do?",
     options: [
-      { ansId: "19A", text: "Introduce yourself and start conversations" },
-      { ansId: "19B", text: "Observe first and join in gradually" },
-      { ansId: "19C", text: "Find one person to connect with" },
-      { ansId: "19D", text: "Stay quiet and wait for someone to approach you" },
+      { ansId: "19A", text: "Introduce yourself and start conversations", vals: { sociable: 4, empathic: 1, planner: 1, logical: 0, impulsive: 1 } },
+      { ansId: "19B", text: "Observe first and join in gradually", vals: { planner: 2, logical: 1, empathic: 1, sociable: 0, impulsive: 0 } },
+      { ansId: "19C", text: "Find one person to connect with", vals: { empathic: 3, sociable: 2, planner: 0, logical: 0, impulsive: 0 } },
+      { ansId: "19D", text: "Stay quiet and wait for someone to approach you", vals: { empathic: 1, planner: 0, logical: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -214,10 +214,10 @@ export const questions = [
     title: "Question 20",
     text: "You lose something important just before an important event. How do you handle it?",
     options: [
-      { ansId: "20A", text: "Search quickly and stay focused on solving it" },
-      { ansId: "20B", text: "Take a breath and think logically" },
-      { ansId: "20C", text: "Ask for help and check all the likely places" },
-      { ansId: "20D", text: "Panic and assume the day is ruined" },
+      { ansId: "20A", text: "Search quickly and stay focused on solving it", vals: { planner: 3, logical: 2, impulsive: 1, empathic: 0, sociable: 0 } },
+      { ansId: "20B", text: "Take a breath and think logically", vals: { logical: 3, planner: 2, empathic: 0, sociable: 0, impulsive: 0 } },
+      { ansId: "20C", text: "Ask for help and check all the likely places", vals: { empathic: 1, planner: 2, logical: 1, sociable: 1, impulsive: 0 } },
+      { ansId: "20D", text: "Panic and assume the day is ruined", vals: { empathic: 0, planner: 0, logical: 0, sociable: 0, impulsive: -2 } },
     ],
   },
   {
@@ -225,10 +225,10 @@ export const questions = [
     title: "Question 21",
     text: "Someone shares a personal problem with you, and you don’t know what to say. What do you do?",
     options: [
-      { ansId: "21A", text: "Say something honest and supportive" },
-      { ansId: "21B", text: "Listen carefully and let them talk" },
-      { ansId: "21C", text: "Offer practical help or advice" },
-      { ansId: "21D", text: "Feel awkward and change the subject" },
+      { ansId: "21A", text: "Say something honest and supportive", vals: { empathic: 4, sociable: 2, planner: 0, logical: 0, impulsive: 0 } },
+      { ansId: "21B", text: "Listen carefully and let them talk", vals: { empathic: 4, planner: 0, logical: 0, sociable: 0, impulsive: 0 } },
+      { ansId: "21C", text: "Offer practical help or advice", vals: { logical: 2, empathic: 2, planner: 1, sociable: 0, impulsive: 0 } },
+      { ansId: "21D", text: "Feel awkward and change the subject", vals: { empathic: 0, planner: 0, logical: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -236,10 +236,10 @@ export const questions = [
     title: "Question 22",
     text: "You’re offered a chance to take on a big responsibility you’re not fully ready for. How do you respond?",
     options: [
-      { ansId: "22A", text: "Say yes and figure it out along the way" },
-      { ansId: "22B", text: "Think carefully and ask questions first" },
-      { ansId: "22C", text: "Decline unless you’re sure you can handle it" },
-      { ansId: "22D", text: "Feel intimidated and hesitate" },
+      { ansId: "22A", text: "Say yes and figure it out along the way", vals: { impulsive: 3, planner: 1, logical: 1, empathic: 0, sociable: 0 } },
+      { ansId: "22B", text: "Think carefully and ask questions first", vals: { planner: 3, logical: 2, empathic: 0, sociable: 0, impulsive: 0 } },
+      { ansId: "22C", text: "Decline unless you’re sure you can handle it", vals: { planner: 2, logical: 2, empathic: 0, sociable: 0, impulsive: -1 } },
+      { ansId: "22D", text: "Feel intimidated and hesitate", vals: { empathic: 1, planner: 0, logical: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -247,10 +247,10 @@ export const questions = [
     title: "Question 23",
     text: "You’re in a disagreement with someone close to you. What’s your first move?",
     options: [
-      { ansId: "23A", text: "Say what you think clearly and directly" },
-      { ansId: "23B", text: "Try to understand their side first" },
-      { ansId: "23C", text: "Avoid conflict and wait for things to cool down" },
-      { ansId: "23D", text: "Get defensive and push your point harder" },
+      { ansId: "23A", text: "Say what you think clearly and directly", vals: { logical: 2, empathic: 1, planner: 1, sociable: 1, impulsive: 0 } },
+      { ansId: "23B", text: "Try to understand their side first", vals: { empathic: 3, planner: 1, logical: 1, sociable: 0, impulsive: 0 } },
+      { ansId: "23C", text: "Avoid conflict and wait for things to cool down", vals: { planner: 1, empathic: 1, logical: 0, sociable: 0, impulsive: -1 } },
+      { ansId: "23D", text: "Get defensive and push your point harder", vals: { impulsive: 2, logical: 1, empathic: 0, sociable: 1, planner: 0 } },
     ],
   },
   {
@@ -258,10 +258,10 @@ export const questions = [
     title: "Question 24",
     text: "You’re invited to a last-minute trip you didn’t plan for. How do you react?",
     options: [
-      { ansId: "24A", text: "Say yes immediately and start packing" },
-      { ansId: "24B", text: "Think about the pros and cons before deciding" },
-      { ansId: "24C", text: "Ask what the plan is before committing" },
-      { ansId: "24D", text: "Feel unsure and decline" },
+      { ansId: "24A", text: "Say yes immediately and start packing", vals: { impulsive: 4, sociable: 2, planner: 0, empathic: 0, logical: 0 } },
+      { ansId: "24B", text: "Think about the pros and cons before deciding", vals: { planner: 3, logical: 2, empathic: 0, sociable: 0, impulsive: 0 } },
+      { ansId: "24C", text: "Ask what the plan is before committing", vals: { planner: 2, logical: 1, empathic: 0, sociable: 0, impulsive: 0 } },
+      { ansId: "24D", text: "Feel unsure and decline", vals: { empathic: 1, logical: 0, planner: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -269,10 +269,10 @@ export const questions = [
     title: "Question 25",
     text: "A stranger asks you for help in a stressful situation. What do you do?",
     options: [
-      { ansId: "25A", text: "Step in and try to assist right away" },
-      { ansId: "25B", text: "Assess the situation before acting" },
-      { ansId: "25C", text: "Offer help if you can realistically do something" },
-      { ansId: "25D", text: "Feel uncomfortable and keep your distance" },
+      { ansId: "25A", text: "Step in and try to assist right away", vals: { empathic: 2, impulsive: 2, planner: 1, sociable: 1, logical: 0 } },
+      { ansId: "25B", text: "Assess the situation before acting", vals: { planner: 2, logical: 2, empathic: 1, sociable: 0, impulsive: 0 } },
+      { ansId: "25C", text: "Offer help if you can realistically do something", vals: { empathic: 2, planner: 1, logical: 1, sociable: 0, impulsive: 0 } },
+      { ansId: "25D", text: "Feel uncomfortable and keep your distance", vals: { empathic: 1, planner: 0, logical: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -280,10 +280,10 @@ export const questions = [
     title: "Question 26",
     text: "You’re left out of a group chat or inside joke. How do you react?",
     options: [
-      { ansId: "26A", text: "Ask what’s going on and join in" },
-      { ansId: "26B", text: "Feel a little hurt but let it pass" },
-      { ansId: "26C", text: "Ignore it and focus on your own things" },
-      { ansId: "26D", text: "Assume they don’t want you around" },
+      { ansId: "26A", text: "Ask what’s going on and join in", vals: { sociable: 3, empathic: 2, planner: 0, logical: 0, impulsive: 0 } },
+      { ansId: "26B", text: "Feel a little hurt but let it pass", vals: { empathic: 2, planner: 0, logical: 0, sociable: 0, impulsive: 0 } },
+      { ansId: "26C", text: "Ignore it and focus on your own things", vals: { planner: 1, logical: 1, empathic: 0, sociable: 0, impulsive: 0 } },
+      { ansId: "26D", text: "Assume they don’t want you around", vals: { empathic: 0, logical: -1, planner: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -291,10 +291,10 @@ export const questions = [
     title: "Question 27",
     text: "You get an unexpected compliment from someone you admire. What do you do?",
     options: [
-      { ansId: "27A", text: "Thank them warmly and smile" },
-      { ansId: "27B", text: "Feel shy but accept it politely" },
-      { ansId: "27C", text: "Downplay it and say it isn’t a big deal" },
-      { ansId: "27D", text: "Wonder if they meant it seriously" },
+      { ansId: "27A", text: "Thank them warmly and smile", vals: { sociable: 3, empathic: 2, planner: 0, logical: 0, impulsive: 0 } },
+      { ansId: "27B", text: "Feel shy but accept it politely", vals: { empathic: 2, planner: 0, logical: 0, sociable: 1, impulsive: 0 } },
+      { ansId: "27C", text: "Downplay it and say it isn’t a big deal", vals: { logical: 1, empathic: 1, planner: 0, sociable: 0, impulsive: 0 } },
+      { ansId: "27D", text: "Wonder if they meant it seriously", vals: { logical: 2, empathic: 0, planner: 0, sociable: 0, impulsive: 0 } },
     ],
   },
   {
@@ -302,10 +302,10 @@ export const questions = [
     title: "Question 28",
     text: "A friend shares exciting news, but you’re having a difficult day. How do you respond?",
     options: [
-      { ansId: "28A", text: "Celebrate with them and put your feelings aside" },
-      { ansId: "28B", text: "Share your own frustration honestly" },
-      { ansId: "28C", text: "Stay supportive but keep your distance" },
-      { ansId: "28D", text: "Feel jealous and withdraw" },
+      { ansId: "28A", text: "Celebrate with them and put your feelings aside", vals: { empathic: 3, sociable: 2, planner: 0, logical: 0, impulsive: 0 } },
+      { ansId: "28B", text: "Share your own frustration honestly", vals: { empathic: 2, logical: 1, planner: 0, sociable: 0, impulsive: 0 } },
+      { ansId: "28C", text: "Stay supportive but keep your distance", vals: { empathic: 2, logical: 0, planner: 0, sociable: 1, impulsive: 0 } },
+      { ansId: "28D", text: "Feel jealous and withdraw", vals: { empathic: 0, logical: 0, planner: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -313,10 +313,10 @@ export const questions = [
     title: "Question 29",
     text: "You’re put in charge of organizing something important and people start relying on you. What’s your reaction?",
     options: [
-      { ansId: "29A", text: "Take control and make a plan" },
-      { ansId: "29B", text: "Feel pressure but rise to the challenge" },
-      { ansId: "29C", text: "Ask for help and divide responsibilities" },
-      { ansId: "29D", text: "Stress out and worry about making mistakes" },
+      { ansId: "29A", text: "Take control and make a plan", vals: { planner: 4, logical: 3, empathic: 1, sociable: 0, impulsive: 0 } },
+      { ansId: "29B", text: "Feel pressure but rise to the challenge", vals: { empathic: 1, planner: 2, logical: 2, sociable: 0, impulsive: 0 } },
+      { ansId: "29C", text: "Ask for help and divide responsibilities", vals: { empathic: 2, planner: 2, sociable: 1, logical: 1, impulsive: 0 } },
+      { ansId: "29D", text: "Stress out and worry about making mistakes", vals: { empathic: 1, logical: 0, planner: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -324,10 +324,10 @@ export const questions = [
     title: "Question 30",
     text: "You suddenly have a free evening with no plans. What do you do?",
     options: [
-      { ansId: "30A", text: "Fill it with something exciting or social" },
-      { ansId: "30B", text: "Relax and enjoy the freedom" },
-      { ansId: "30C", text: "Use the time to catch up on things" },
-      { ansId: "30D", text: "Feel uneasy and wonder what you should be doing" },
+      { ansId: "30A", text: "Fill it with something exciting or social", vals: { sociable: 4, impulsive: 2, planner: 0, empathic: 1, logical: 0 } },
+      { ansId: "30B", text: "Relax and enjoy the freedom", vals: { empathic: 1, planner: 1, logical: 0, sociable: 0, impulsive: 0 } },
+      { ansId: "30C", text: "Use the time to catch up on things", vals: { planner: 2, logical: 1, empathic: 0, sociable: 0, impulsive: 0 } },
+      { ansId: "30D", text: "Feel uneasy and wonder what you should be doing", vals: { empathic: 0, logical: 0, planner: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -335,10 +335,10 @@ export const questions = [
     title: "Question 31",
     text: "Someone close to you makes a decision you strongly disagree with. How do you respond?",
     options: [
-      { ansId: "31A", text: "Voice your opinion clearly" },
-      { ansId: "31B", text: "Try to understand why they chose it" },
-      { ansId: "31C", text: "Stay quiet and let them decide" },
-      { ansId: "31D", text: "Get frustrated and argue" },
+      { ansId: "31A", text: "Voice your opinion clearly", vals: { logical: 2, empathic: 1, planner: 1, sociable: 1, impulsive: 0 } },
+      { ansId: "31B", text: "Ask and try to understand why they chose it", vals: { empathic: 3, planner: 1, logical: 1, sociable: 0, impulsive: 0 } },
+      { ansId: "31C", text: "Stay quiet and let them live their life", vals: { empathic: 1, planner: 0, logical: 0, sociable: 0, impulsive: -1 } },
+      { ansId: "31D", text: "Get frustrated and argue to change their mind", vals: { impulsive: 3, logical: 0, empathic: 0, sociable: 1, planner: 0 } },
     ],
   },
   {
@@ -346,10 +346,10 @@ export const questions = [
     title: "Question 32",
     text: "You’re waiting for important news and it takes longer than expected. How do you react?",
     options: [
-      { ansId: "32A", text: "Keep checking for updates and staying alert" },
-      { ansId: "32B", text: "Stay calm and trust the process" },
-      { ansId: "32C", text: "Distract yourself while waiting" },
-      { ansId: "32D", text: "Worry constantly and imagine the worst" },
+      { ansId: "32A", text: "Keep checking for updates and staying alert", vals: { planner: 1, logical: 1, impulsive: 1, empathic: 0, sociable: 0 } },
+      { ansId: "32B", text: "Stay calm and trust the process", vals: { empathic: 1, planner: 1, logical: 0, sociable: 0, impulsive: 0 } },
+      { ansId: "32C", text: "Distract yourself while waiting", vals: { planner: 0, logical: 0, empathic: 0, sociable: 0, impulsive: 1 } },
+      { ansId: "32D", text: "Worry constantly and imagine the worst", vals: { empathic: 1, planner: 0, logical: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
@@ -357,35 +357,36 @@ export const questions = [
     title: "Question 33",
     text: "You get a chance to try something completely new and unfamiliar. What do you do?",
     options: [
-      { ansId: "33A", text: "Jump in and learn by doing" },
-      { ansId: "33B", text: "Research it first and prepare" },
-      { ansId: "33C", text: "Ask someone experienced to guide you" },
-      { ansId: "33D", text: "Feel nervous and hesitate" },
+      { ansId: "33A", text: "Jump in and learn by doing", vals: { impulsive: 4, sociable: 1, planner: 1, logical: 1, empathic: 0 } },
+      { ansId: "33B", text: "Research it first and prepare", vals: { planner: 3, logical: 3, empathic: 0, sociable: 0, impulsive: 0 } },
+      { ansId: "33C", text: "Ask someone experienced to guide you", vals: { empathic: 2, planner: 1, logical: 1, sociable: 1, impulsive: 0 } },
+      { ansId: "33D", text: "Feel nervous and hesitate", vals: { empathic: 1, planner: 0, logical: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
     id: 34,
     title: "Question 34",
-    text: "You notice someone is being ignored in a social setting. How do you respond?",
+    text: "You notice someone is being picked on in a social setting. How do you respond?",
     options: [
-      { ansId: "34A", text: "Include them and start a conversation" },
-      { ansId: "34B", text: "Observe and decide whether to step in" },
-      { ansId: "34C", text: "Wait to see if someone else helps" },
-      { ansId: "34D", text: "Avoid getting involved" },
+      { ansId: "34A", text: "Befriend and start a conversation", vals: { empathic: 3, sociable: 3, planner: 0, logical: 0, impulsive: 0 } },
+      { ansId: "34B", text: "Observe and decide whether to step in", vals: { planner: 2, logical: 1, empathic: 1, sociable: 0, impulsive: 0 } },
+      { ansId: "34C", text: "Wait to see if someone else helps them", vals: { empathic: 1, planner: 0, logical: 0, sociable: 0, impulsive: -1 } },
+      { ansId: "34D", text: "Avoid getting involved", vals: { empathic: 0, planner: 0, logical: 0, sociable: 0, impulsive: -1 } },
     ],
   },
   {
     id: 35,
     title: "Question 35",
-    text: "You feel overwhelmed but everyone around you seems calm. What do you do?",
+    text: "You feel overwhelmed in a tense situation but everyone around you seems calm. What do you do?",
     options: [
-      { ansId: "35A", text: "Act quickly and take charge of the situation" },
-      { ansId: "35B", text: "Stay calm and try to steady yourself first" },
-      { ansId: "35C", text: "Ask for help or take a break" },
-      { ansId: "35D", text: "Keep quiet and hope it passes" },
+      { ansId: "35A", text: "Act quickly and take charge of the situation", vals: { impulsive: 3, planner: 1, logical: 1, empathic: 1, sociable: 1 } },
+      { ansId: "35B", text: "Stay calm and try to steady yourself first", vals: { empathic: 2, planner: 1, logical: 1, sociable: 0, impulsive: 0 } },
+      { ansId: "35C", text: "Ask for help or take a break", vals: { empathic: 2, planner: 1, logical: 0, sociable: 0, impulsive: 0 } },
+      { ansId: "35D", text: "Keep quiet and hope the feeling passes", vals: { empathic: 0, planner: 0, logical: 0, sociable: 0, impulsive: -1 } },
     ],
   },
 ];
 
 // NOTE: `defaultOptionTypes` and `optionTypeMap` removed —
 // assign per-option `vals` or `type` directly on each answer.
+

@@ -1,4 +1,11 @@
-import { questions as questionPool } from "./modules/quiz.js";
+import {
+  initializeQuiz,
+  getCurrentQuestion,
+  getQuestionCount,
+  getCurrentIndex,
+  answerCurrentQuestion,
+  getResults,
+} from "./modules/quiz-logic.js";
 
 // small helper to get DOM elements
 function $id(id) {
@@ -13,10 +20,6 @@ const questionCounter = $id("question-counter");
 const progressBar = $id("progress-bar");
 const quizProgressContainer = $id("quiz-progress-container");
 const homeLogo = $id("home-logo");
-
-let currentQuestionIndex = 0;
-let userAnswers = []; // stores ansId per question index
-let activeQuestions = [];
 
 // Show the quiz and start it
 function startAssessment() {
@@ -49,78 +52,42 @@ if (startAssessmentButton) {
 }
 
 function updateProgress(index) {
-  if (!questionCounter || !progressBar || activeQuestions.length === 0) {
+  const totalQuestions = getQuestionCount();
+  if (!questionCounter || !progressBar || totalQuestions === 0) {
     return;
   }
 
   const currentQuestionNumber = index + 1;
-  const totalQuestions = activeQuestions.length;
   const progressPercentage = (currentQuestionNumber / totalQuestions) * 100;
 
   questionCounter.textContent = `Question ${currentQuestionNumber} of ${totalQuestions}`;
-
   progressBar.style.width = `${progressPercentage}%`;
   progressBar.textContent = `${Math.round(progressPercentage)}%`;
-
-  progressBar.setAttribute(
-    "aria-valuenow",
-    String(Math.round(progressPercentage)),
-  );
+  progressBar.setAttribute("aria-valuenow", String(Math.round(progressPercentage)));
 }
 
-// Choose a personality label for display: use option.type if present,
-// otherwise return the trait key with the highest value (if any).
-function getPersonalityType(optionObj) {
-  if (!optionObj) return "Unknown";
-  if (optionObj.type) return optionObj.type;
-  const traits = optionObj.vals || optionObj.traits;
-  if (traits && typeof traits === "object") {
-    let top = null;
-    let topVal = -Infinity;
-    for (const trait in traits) {
-      const v = Number(traits[trait] || 0);
-      if (v > topVal) {
-        topVal = v;
-        top = trait;
-      }
-    }
-    return top || "Unknown";
-  }
-  return "Unknown";
+function capitalizeLabel(value) {
+  if (typeof value !== "string" || value.length === 0) return value;
+  return value.charAt(0).toUpperCase() + value.slice(1);
 }
 
 function startQuiz() {
   if (quizProgressContainer) {
     quizProgressContainer.hidden = false;
   }
-  currentQuestionIndex = 0;
-  userAnswers = [];
 
-  // copy pool and shuffle if larger than 30
-  const pool = Array.isArray(questionPool) ? questionPool.slice() : [];
-  if (pool.length > 30) {
-    for (let i = pool.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      const tmp = pool[i];
-      pool[i] = pool[j];
-      pool[j] = tmp;
-    }
-    activeQuestions = pool.slice(0, 30);
-  } else {
-    activeQuestions = pool;
-  }
-
-  renderQuestion(currentQuestionIndex);
+   initializeQuiz();
+  renderQuestion();
 }
 
-function renderQuestion(index) {
-  const question = activeQuestions[index];
+function renderQuestion() {
+  const question = getCurrentQuestion();
   const main = $id("quiz-content");
   if (!main || !question) return;
 
-  updateProgress(index);
+  const currentIndex = getCurrentIndex();
+  updateProgress(currentIndex);
 
-  // build option buttons
   let optionsHtml = "";
   for (let i = 0; i < question.options.length; i++) {
     const option = question.options[i];
@@ -131,13 +98,12 @@ function renderQuestion(index) {
 
   main.innerHTML = `
     <section class="quiz-card">
-      <h2>Question ${index + 1}</h2>
+      <h2>Question ${currentIndex + 1}</h2>
       <p>${question.text}</p>
       <div class="quiz-options d-grid gap-4">${optionsHtml}</div>
     </section>
   `;
 
-  // attach handlers
   const buttons = main.querySelectorAll(".quiz-option");
   for (const btn of buttons) {
     btn.addEventListener("click", function () {
@@ -157,10 +123,9 @@ function renderQuestion(index) {
 }
 
 function handleAnswer(ansId) {
-  userAnswers[currentQuestionIndex] = ansId;
-  if (currentQuestionIndex < activeQuestions.length - 1) {
-    currentQuestionIndex += 1;
-    renderQuestion(currentQuestionIndex);
+  const result = answerCurrentQuestion(ansId);
+  if (result.next) {
+    renderQuestion();
   } else {
     showResults();
   }
@@ -173,66 +138,31 @@ function showResults() {
   const main = $id("quiz-content");
   if (!main) return;
 
-  const scores = {};
-  let summary = "";
+  const results = getResults();
 
-  for (let i = 0; i < activeQuestions.length; i++) {
-    const question = activeQuestions[i];
-    const selectedAnsId = userAnswers[i];
-
-    // find option object
-    let optionObj = null;
-    for (let optIndex = 0; optIndex < question.options.length; optIndex++) {
-      const candidate = question.options[optIndex];
-      if (
-        (candidate.ansId && candidate.ansId === selectedAnsId) ||
-        (candidate.ansID && candidate.ansID === selectedAnsId)
-      ) {
-        optionObj = candidate;
-        break;
-      }
-    }
-
-    const choice = optionObj
-      ? optionObj.text || optionObj.answer
-      : "(no answer)";
-
-    // aggregate traits
-    const traits = optionObj && (optionObj.vals || optionObj.traits);
-    if (traits && typeof traits === "object") {
-      for (const trait in traits) {
-        const v = Number(traits[trait] || 0);
-        scores[trait] = (scores[trait] || 0) + v;
-      }
-    } else {
-      const typeLabel =
-        optionObj && optionObj.type ? optionObj.type : "Unknown";
-      scores[typeLabel] = (scores[typeLabel] || 0) + 1;
-    }
-
-    const displayLabel = getPersonalityType(optionObj);
-    summary += `<li>Question ${i + 1}: ${choice} <strong>(${displayLabel})</strong></li>`;
-  }
-
-  const results = getResults(scores);
-
-  // render results
   let scoresHtml = "";
   for (const trait in results.scores) {
-    scoresHtml += `<li>${trait}: ${results.scores[trait]}</li>`;
+    scoresHtml += `<li>${capitalizeLabel(trait)}: ${results.scores[trait]}</li>`;
   }
+
+  let summaryHtml = "";
+  for (const item of results.summary) {
+    summaryHtml += `<li>Question ${item.questionNumber}: ${item.choice} <strong>(${capitalizeLabel(item.displayLabel)})</strong></li>`;
+  }
+
+  const overallLabel = results.overall === "Balanced" ? results.overall : capitalizeLabel(results.overall);
 
   main.innerHTML = `
     <section class="quiz-card">
       <h2>Results</h2>
-      <p><strong>Overall:</strong> ${results.overall}</p>
+      <p><strong>Overall:</strong> ${overallLabel}</p>
       <div>
         <h3>Scores</h3>
         <ul>${scoresHtml}</ul>
       </div>
       <div>
         <h3>Answers</h3>
-        <ul>${summary}</ul>
+        <ul>${summaryHtml}</ul>
       </div>
       <button id="restart-quiz" class="btn btn-primary mt-3">Restart</button>
     </section>
@@ -242,20 +172,3 @@ function showResults() {
   if (restart) restart.addEventListener("click", startQuiz);
 }
 
-function getResults(scores) {
-  let max = -Infinity;
-  const winners = [];
-  for (const trait in scores) {
-    if (scores[trait] > max) max = scores[trait];
-  }
-  for (const trait in scores) {
-    if (scores[trait] === max) winners.push(trait);
-  }
-
-  let overall = winners.length === 1 ? winners[0] : "Balanced";
-  if (overall === "Unknown" && Object.keys(scores).length > 1)
-    overall = "Balanced";
-  return { overall, winners, scores };
-}
-
-// end quiz code
