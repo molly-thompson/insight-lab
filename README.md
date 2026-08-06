@@ -119,7 +119,7 @@ This monospaced, technical font is well suited to conveying the data-driven natu
 Mohammed: 
 
 Design Contributions:
-Microsoft copilo was used to generate the sample questions for the quiz itself. The AI was prompted with the idea for the quiz and returned a range of 30 ideas with responses to the questions which were then amended for suitability purposes.
+Microsoft copilot was used to generate the sample questions for the quiz itself. The AI was prompted with the idea for the quiz and returned a range of 30 ideas with responses to the questions which were then amended for suitability purposes.
 
 Debugging contributions: 
 Copilot was used to amend certain visual glitches and inconsistencies. It also was used to explain certain concepts for me and walk me through how those concepts were applied to our project, such as the inserting impermanent components into the DOM and then ultimately into the index.html.
