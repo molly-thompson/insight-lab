@@ -441,6 +441,7 @@ There are no major discrepancies between the development version of the site, an
 
 ### Code Validation
 components.css validation in (documentation/components validate.png)
+page.css validation in (documentation/page css val.png)
 #### HTML
 
 #### CSS
