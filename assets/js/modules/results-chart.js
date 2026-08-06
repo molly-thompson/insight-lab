@@ -43,7 +43,7 @@ export class ResultsChart {
       am5radar.RadarChart.new(this.root, {
         startAngle: -95,
         endAngle: 265,
-        innerRadius: am5.percent(28),
+        innerRadius: am5.percent(6),
         panX: false,
         panY: false,
         wheelX: "none",
