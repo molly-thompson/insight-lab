@@ -440,7 +440,7 @@ Copilot was used to formulacome up with the random shuffle for the question pool
 There are no major discrepancies between the development version of the site, and the deployed version.
 
 ### Code Validation
-
+components.css validation in (documentation/components validate.png)
 #### HTML
 
 #### CSS
