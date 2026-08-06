@@ -52,6 +52,33 @@ function renderTopTraits(scores, limit = 3) {
     .join("");
 }
 
+function renderChartMeta() {
+  return `
+    <div class="results-chart-meta">
+      <span class="results-chart-meta__label">Radar view</span>
+      <span class="results-chart-meta__hint">Higher values indicate stronger alignment</span>
+    </div>
+  `;
+}
+
+function renderChartPanel(slotId) {
+  return `
+    <div class="results-panel results-panel--chart">
+      ${renderChartMeta()}
+      <div id="${slotId}" class="results-chart-slot"></div>
+    </div>
+  `;
+}
+
+function renderTopTraitsPanel(scores, stacked = false) {
+  return `
+    <div class="results-panel results-panel--traits">
+      <p class="results-eyebrow mb-2">Top traits</p>
+      <div class="trait-strip${stacked ? " trait-strip--stacked" : ""}">${renderTopTraits(scores)}</div>
+    </div>
+  `;
+}
+
 export class ResultsRenderer {
   constructor(containerElement) {
     this.container =
@@ -62,15 +89,14 @@ export class ResultsRenderer {
   render(resultsPayload) {
     const scores =
       resultsPayload && resultsPayload.scores ? resultsPayload.scores : {};
-    const answers = Array.isArray(resultsPayload.answers)
-      ? resultsPayload.answers
-      : [];
 
     if (Object.keys(scores).length === 0) {
       this.container.innerHTML = renderEmptyState();
       return {
         container: this.container,
-        chartHost: null,
+        chartDesktopSlot: null,
+        chartMobileSlot: null,
+        mobileChartTabTrigger: null,
         restartButton: document.getElementById("restart-quiz"),
       };
     }
@@ -78,8 +104,36 @@ export class ResultsRenderer {
     const markup = `
       <section class="quiz-card results-card">
         ${renderHeader(resultsPayload)}
-        ${renderTraitStrip(scores)}
-        ${renderChartSection()}
+        <div class="results-layout-desktop d-none d-lg-block">
+          <div class="row g-3 mt-2">
+            <div class="col-12 col-lg-7">
+              ${renderChartPanel("resultsChartSlotDesktop")}
+            </div>
+            <div class="col-12 col-lg-5">
+              ${renderTopTraitsPanel(scores, true)}
+            </div>
+          </div>
+        </div>
+
+        <div class="results-layout-mobile d-lg-none mt-3">
+          <ul class="nav nav-tabs results-tabs" id="resultsTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="results-chart-tab" data-bs-toggle="tab" data-bs-target="#results-chart-pane" type="button" role="tab" aria-controls="results-chart-pane" aria-selected="true">Radar view</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="results-traits-tab" data-bs-toggle="tab" data-bs-target="#results-traits-pane" type="button" role="tab" aria-controls="results-traits-pane" aria-selected="false">Top traits</button>
+            </li>
+          </ul>
+
+          <div class="tab-content results-tabs-content" id="resultsTabsContent">
+            <div class="tab-pane fade show active" id="results-chart-pane" role="tabpanel" aria-labelledby="results-chart-tab" tabindex="0">
+              ${renderChartPanel("resultsChartSlotMobile")}
+            </div>
+            <div class="tab-pane fade" id="results-traits-pane" role="tabpanel" aria-labelledby="results-traits-tab" tabindex="0">
+              ${renderTopTraitsPanel(scores)}
+            </div>
+          </div>
+        </div>
 
         <button id="restart-quiz" class="btn btn-primary mt-3">Restart</button>
       </section>
@@ -89,7 +143,9 @@ export class ResultsRenderer {
 
     return {
       container: this.container,
-      chartHost: document.getElementById("resultsChart"),
+      chartDesktopSlot: document.getElementById("resultsChartSlotDesktop"),
+      chartMobileSlot: document.getElementById("resultsChartSlotMobile"),
+      mobileChartTabTrigger: document.getElementById("results-chart-tab"),
       restartButton: document.getElementById("restart-quiz"),
     };
   }
@@ -108,22 +164,6 @@ function renderHeader(resultsPayload) {
         <span class="results-badge__label">Dominant pattern</span>
         <strong class="results-badge__value">${overall}</strong>
       </div>
-    </div>
-  `;
-}
-
-function renderTraitStrip(scores) {
-  return `<div class="trait-strip">${renderTopTraits(scores)}</div>`;
-}
-
-function renderChartSection() {
-  return `
-    <div class="results-chart-wrap">
-      <div class="results-chart-meta">
-        <span class="results-chart-meta__label">Radar view</span>
-        <span class="results-chart-meta__hint">Higher values indicate stronger alignment</span>
-      </div>
-      <div id="resultsChart" class="results-chart"></div>
     </div>
   `;
 }

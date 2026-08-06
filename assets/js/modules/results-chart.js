@@ -1,18 +1,19 @@
+// Results: create amChart radar graph
+
 import { getTopScores } from "./results-data.js";
-import {
-  chartPalette,
-  getTraitAccent,
-  rgbaString,
-} from "./utils/color-utils.js";
+import { chartPalette } from "./utils/color-utils.js";
 
 export class ResultsChart {
   constructor(hostElement) {
     this.host = hostElement;
     this.root = null;
     this.chart = null;
+    this.xAxis = null;
+    this.series = null;
+    this.hasAppeared = false;
   }
 
-  render(scores) {
+  ensureChart() {
     if (
       typeof am5 === "undefined" ||
       typeof am5xy === "undefined" ||
@@ -24,16 +25,13 @@ export class ResultsChart {
       );
     }
 
-    if (this.root) {
-      this.dispose();
+    if (!this.host) {
+      throw new Error("Missing chart host element");
     }
 
-    const chartData =
-      typeof getTopScores === "function"
-        ? getTopScores(scores, 5)
-        : Object.entries(scores)
-            .slice(0, 5)
-            .map(([k, v]) => ({ category: k, value: v }));
+    if (this.root) {
+      return;
+    }
 
     this.root = am5.Root.new(this.host);
     this.root.numberFormatter = am5.NumberFormatter.new(this.root, {
@@ -181,14 +179,57 @@ export class ResultsChart {
       });
     }
 
-    xAxis.data.setAll(chartData);
-    series.data.setAll(chartData);
-
-    series.appear(1000);
-    chart.appear(1000, 100);
-
+    this.xAxis = xAxis;
+    this.series = series;
     this.chart = chart;
-    return chart;
+  }
+
+  setHost(hostElement) {
+    if (!hostElement) return;
+    this.host = hostElement;
+  }
+
+  setScores(scores) {
+    this.ensureChart();
+
+    const chartData =
+      typeof getTopScores === "function"
+        ? getTopScores(scores, 5)
+        : Object.entries(scores)
+            .slice(0, 5)
+            .map(([k, v]) => ({ category: k, value: v }));
+
+    if (this.xAxis) {
+      this.xAxis.data.setAll(chartData);
+    }
+    if (this.series) {
+      this.series.data.setAll(chartData);
+      if (!this.hasAppeared) {
+        this.series.appear(1000);
+      }
+    }
+
+    if (this.chart && !this.hasAppeared) {
+      this.chart.appear(1000, 100);
+      this.hasAppeared = true;
+    }
+
+    this.resize();
+    return this.chart;
+  }
+
+  render(scores) {
+    this.setScores(scores);
+    return this.chart;
+  }
+
+  resize() {
+    if (!this.root) return;
+    if (typeof this.root.resize === "function") {
+      this.root.resize();
+      return;
+    }
+    window.dispatchEvent(new Event("resize"));
   }
 
   dispose() {
@@ -200,6 +241,9 @@ export class ResultsChart {
       }
       this.root = null;
       this.chart = null;
+      this.xAxis = null;
+      this.series = null;
+      this.hasAppeared = false;
     }
   }
 }
