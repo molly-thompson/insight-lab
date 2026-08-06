@@ -1,3 +1,5 @@
+// Any functionality related to results-data processing
+
 export function getPersonalityType(optionObj) {
   if (!optionObj) return "Unknown";
   if (optionObj.type) return optionObj.type;
