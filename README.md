@@ -180,49 +180,49 @@ Accessibility
 
 ### Welcome Screen
 
-![InsightLab welcome screen](assets/images/welcome.png)
+![InsightLab welcome screen](documentation/welcome.png)
 
 The welcome screen introduces users to the InsightLab behavioural assessment. It explains the purpose of the quiz, what users can expect, and provides key information before starting the assessment.
 
 ### Hero Call-To-Action
 
-![InsightLab Start Assessment button](assets/images/welcome.png)
+![InsightLab Start Assessment button](documentation/welcome.png)
 
 The hero section includes a prominent "Start Assessment" button, allowing users to immediately begin the quiz and providing a clear first action for new visitors.
 
 ### Behavioural Assessment Questions
 
-![InsightLab quiz questions](assets/images/questions.png)
+![InsightLab quiz questions](documentation/questions.png)
 
 The assessment presents users with scenario-based multiple-choice questions designed to analyse behavioural traits. Users answer each question individually before progressing through the assessment.
 
 ### Progress Tracker
 
-![InsightLab progress tracker](assets/images/questions.png)
+![InsightLab progress tracker](documentation/questions.png)
 
 The progress tracker displays the user's current position within the assessment. It updates as questions are completed and helps users understand how far they are through the quiz.
 
 ### Responsive Navigation
 
-![InsightLab navigation menu](assets/images/nav.png)
+![InsightLab navigation menu](documentation/nav.png)
 
 The responsive navigation menu allows users to access different sections of the application, including the assessment, methodology explanation and information about InsightLab. The menu adapts to different screen sizes using an offcanvas layout.
 
 ### Methodology Explanation
 
-![InsightLab methodology modal](assets/images/method.png)
+![InsightLab methodology modal](documentation/method.png)
 
 The methodology modal explains how the behavioural assessment is calculated. It provides users with transparency about how their answers contribute to their final profile.
 
 ### About InsightLab
 
-![InsightLab about modal](assets/images/about.png)
+![InsightLab about modal](documentation/about.png)
 
 The About modal provides information about the purpose of the project and clarifies that InsightLab is an educational demonstration project.
 
 ### Results Page
 
-![InsightLab results page](assets/images/results.png)
+![InsightLab results page](documentation/results.png)
 
 After completing the assessment, users receive a behavioural profile generated from their answers. The results page presents the calculated traits and provides users with insight into their responses.
 
@@ -242,7 +242,7 @@ The MoSCoW prioritisation method was used to identify the most important feature
 
 Git and GitHub were used for version control, with each team member working on separate branches before submitting pull requests for review and merging into the main branch. This helped maintain code quality, reduce conflicts and support collaborative development.
 
-![InsightLab GitHub Project Board](assets/images/board.png)
+![InsightLab GitHub Project Board](documentation/board.png)
 
 ### Structure
 
@@ -302,17 +302,17 @@ The hierarchy follows:
 
 **Desktop**
 
-![InsightLab wireframes for desktop](assets/images/wireframe-desk.png)
+![InsightLab wireframes for desktop](documentation/wireframe-desk.png)
 
-![InsightLab wireframes for desktop](assets/images/wireframe-questions.png)
+![InsightLab wireframes for desktop](documentation/wireframe-questions.png)
 
 **Mobile**
 
-![InsightLab wireframes for mobile](assets/images/wireframe-mobile.png)
+![InsightLab wireframes for mobile](documentation/wireframe-mobile.png)
 
 **Tablet**
 
-![InsightLab wireframes for tablet](assets/images/wireframe-tablet.png)
+![InsightLab wireframes for tablet](documentation/wireframe-tablet.png)
 
 ### Surface
 
@@ -320,7 +320,7 @@ InsightLab's visual identity was designed to reflect the values of a modern beha
 
 #### Colour
 
-coolors link to colour palette: https://coolors.co/f5f6f4-0b1120-38bdf8-67e8f9
+[Coolors link to colour palette](https://coolors.co/f5f6f4-0b1120-38bdf8-67e8f9)
 
 The colour scheme for InsightLabs provides a calm, focused & professional palette. The dark interface reduces visual clutter, keeps attention on the content, and creates a premium aesthetic associated with modern analytics software.
 
