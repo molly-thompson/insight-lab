@@ -1,45 +1,45 @@
 import { escapeHtml, formatTraitLabel } from "./utils/string-utils.js";
 
 function renderScoreList(scores) {
-  return Object.entries(scores)
-    .map(
-      ([trait, score]) => `<li>${escapeHtml(trait)}: ${escapeHtml(score)}</li>`,
-    )
-    .join("");
+	return Object.entries(scores)
+		.map(
+			([trait, score]) => `<li>${escapeHtml(trait)}: ${escapeHtml(score)}</li>`,
+		)
+		.join("");
 }
 
 function renderAnswerSummary(answers) {
-  return answers
-    .map(
-      (answer, index) =>
-        `<li>Question ${index + 1}: ${escapeHtml(answer.choice)} <strong>(${escapeHtml(answer.label)})</strong></li>`,
-    )
-    .join("");
+	return answers
+		.map(
+			(answer, index) =>
+				`<li>Question ${index + 1}: ${escapeHtml(answer.choice)} <strong>(${escapeHtml(answer.label)})</strong></li>`,
+		)
+		.join("");
 }
 
 import { getTraitAccent, rgbaString } from "./utils/color-utils.js";
 
 function renderTopTraits(scores, limit = 3) {
-  return Object.entries(scores)
-    .sort(([, scoreA], [, scoreB]) => scoreB - scoreA)
-    .slice(0, limit)
-    .map(([trait, score], index) => {
-      const accent = getTraitAccent(trait, index);
-      const border = rgbaString(
-        accent,
-        index === 0 ? 0.42 : index === 1 ? 0.32 : 0.24,
-      );
-      const base = rgbaString(
-        accent,
-        index === 0 ? 0.18 : index === 1 ? 0.14 : 0.1,
-      );
-      const toneClass =
-        index === 0
-          ? "trait-chip--primary"
-          : index === 1
-            ? "trait-chip--secondary"
-            : "trait-chip--tertiary";
-      return `
+	return Object.entries(scores)
+		.sort(([, scoreA], [, scoreB]) => scoreB - scoreA)
+		.slice(0, limit)
+		.map(([trait, score], index) => {
+			const accent = getTraitAccent(trait, index);
+			const border = rgbaString(
+				accent,
+				index === 0 ? 0.42 : index === 1 ? 0.32 : 0.24,
+			);
+			const base = rgbaString(
+				accent,
+				index === 0 ? 0.18 : index === 1 ? 0.14 : 0.1,
+			);
+			const toneClass =
+				index === 0
+					? "trait-chip--primary"
+					: index === 1
+						? "trait-chip--secondary"
+						: "trait-chip--tertiary";
+			return `
         <article class="trait-chip ${toneClass}" style="--trait-accent: #${accent.toString(16).padStart(6, "0")}; border-color: ${border}; background: linear-gradient(180deg, ${base}, rgba(15, 23, 42, 0.84)); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 0 0 1px ${rgbaString(accent, 0.08)};">
           <span class="trait-chip__rank">0${index + 1}</span>
           <div class="trait-chip__body">
@@ -48,12 +48,12 @@ function renderTopTraits(scores, limit = 3) {
           </div>
         </article>
       `;
-    })
-    .join("");
+		})
+		.join("");
 }
 
 function renderChartMeta() {
-  return `
+	return `
     <div class="results-chart-meta">
       <span class="results-chart-meta__label">Radar view</span>
       <span class="results-chart-meta__hint">Higher values indicate stronger alignment</span>
@@ -62,7 +62,7 @@ function renderChartMeta() {
 }
 
 function renderChartPanel(slotId) {
-  return `
+	return `
     <div class="results-panel results-panel--chart">
       ${renderChartMeta()}
       <div id="${slotId}" class="results-chart-slot"></div>
@@ -71,7 +71,7 @@ function renderChartPanel(slotId) {
 }
 
 function renderTopTraitsPanel(scores, stacked = false) {
-  return `
+	return `
     <div class="results-panel results-panel--traits">
       <p class="results-eyebrow mb-2">Top traits</p>
       <div class="trait-strip${stacked ? " trait-strip--stacked" : ""}">${renderTopTraits(scores)}</div>
@@ -80,28 +80,28 @@ function renderTopTraitsPanel(scores, stacked = false) {
 }
 
 export class ResultsRenderer {
-  constructor(containerElement) {
-    this.container =
-      containerElement || document.getElementById("resultsContainer");
-    if (!this.container) throw new Error("Missing results container element");
-  }
+	constructor(containerElement) {
+		this.container =
+			containerElement || document.getElementById("resultsContainer");
+		if (!this.container) throw new Error("Missing results container element");
+	}
 
-  render(resultsPayload) {
-    const scores =
-      resultsPayload && resultsPayload.scores ? resultsPayload.scores : {};
+	render(resultsPayload) {
+		const scores =
+			resultsPayload && resultsPayload.scores ? resultsPayload.scores : {};
 
-    if (Object.keys(scores).length === 0) {
-      this.container.innerHTML = renderEmptyState();
-      return {
-        container: this.container,
-        chartDesktopSlot: null,
-        chartMobileSlot: null,
-        mobileChartTabTrigger: null,
-        restartButton: document.getElementById("restart-quiz"),
-      };
-    }
+		if (Object.keys(scores).length === 0) {
+			this.container.innerHTML = renderEmptyState();
+			return {
+				container: this.container,
+				chartDesktopSlot: null,
+				chartMobileSlot: null,
+				mobileChartTabTrigger: null,
+				restartButton: document.getElementById("restart-quiz"),
+			};
+		}
 
-    const markup = `
+		const markup = `
       <section class="quiz-card results-card">
         ${renderHeader(resultsPayload)}
         <div class="results-layout-desktop d-none d-lg-block">
@@ -139,21 +139,21 @@ export class ResultsRenderer {
       </section>
     `;
 
-    this.container.innerHTML = markup;
+		this.container.innerHTML = markup;
 
-    return {
-      container: this.container,
-      chartDesktopSlot: document.getElementById("resultsChartSlotDesktop"),
-      chartMobileSlot: document.getElementById("resultsChartSlotMobile"),
-      mobileChartTabTrigger: document.getElementById("results-chart-tab"),
-      restartButton: document.getElementById("restart-quiz"),
-    };
-  }
+		return {
+			container: this.container,
+			chartDesktopSlot: document.getElementById("resultsChartSlotDesktop"),
+			chartMobileSlot: document.getElementById("resultsChartSlotMobile"),
+			mobileChartTabTrigger: document.getElementById("results-chart-tab"),
+			restartButton: document.getElementById("restart-quiz"),
+		};
+	}
 }
 
 function renderHeader(resultsPayload) {
-  const overall = escapeHtml(resultsPayload.overall || "Balanced");
-  return `
+	const overall = escapeHtml(resultsPayload.overall || "Balanced");
+	return `
     <div class="results-header">
       <div>
         <p class="results-eyebrow">Results overview</p>
@@ -169,7 +169,7 @@ function renderHeader(resultsPayload) {
 }
 
 function renderScoresSection(scores) {
-  return `
+	return `
     <div class="results-section results-section--scores">
       <h3>Trait scores</h3>
       <ul>${renderScoreList(scores)}</ul>
@@ -178,7 +178,7 @@ function renderScoresSection(scores) {
 }
 
 function renderAnswersSection(answers) {
-  return `
+	return `
     <div class="results-section results-section--answers">
       <h3>Answer summary</h3>
       <ul>${renderAnswerSummary(answers)}</ul>
@@ -187,7 +187,7 @@ function renderAnswersSection(answers) {
 }
 
 function renderEmptyState() {
-  return `
+	return `
     <section class="quiz-card results-card">
       <div class="results-header">
         <div>

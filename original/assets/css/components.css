@@ -3,531 +3,531 @@
 /* Welcome screen */
 
 #welcome-screen {
-  min-height: 75vh;
-  display: flex;
-  align-items: center;
+	min-height: 75vh;
+	display: flex;
+	align-items: center;
 }
 
 .welcome-content {
-  width: min(100%, 55rem);
-  min-height: 75vh;
+	width: min(100%, 55rem);
+	min-height: 75vh;
 }
 
 .welcome-tag {
-  color: var(--color-accent-aqua);
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+	color: var(--color-accent-aqua);
+	font-family: var(--font-display);
+	font-size: 1rem;
+	font-weight: 600;
+	letter-spacing: 0.12em;
 }
 
 #welcome-heading {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  line-height: 0.95;
-  letter-spacing: -0.05em;
+	font-family: var(--font-display);
+	font-size: clamp(3rem, 7vw, 5.5rem);
+	line-height: 0.95;
+	letter-spacing: -0.05em;
 }
 
 .welcome-intro {
-  max-width: 38rem;
-  color: rgba(245, 246, 244, 0.78);
-  line-height: 1.7;
+	max-width: 38rem;
+	color: rgba(245, 246, 244, 0.78);
+	line-height: 1.7;
 }
 
 .assessment-details {
-  padding: 0;
-  list-style: none;
+	padding: 0;
+	list-style: none;
 }
 
 .assessment-pill {
-  padding: 0.8rem 1.4rem;
-  border: 1px solid rgba(103, 232, 249, 0.25);
-  border-radius: 999px;
-  background-color: rgba(103, 232, 249, 0.06);
-  color: var(--color-primary-light);
-  font-family: var(--font-display);
-  font-weight: 500;
+	padding: 0.8rem 1.4rem;
+	border: 1px solid rgba(103, 232, 249, 0.25);
+	border-radius: 999px;
+	background-color: rgba(103, 232, 249, 0.06);
+	color: var(--color-primary-light);
+	font-family: var(--font-display);
+	font-weight: 500;
 }
 
 /* Start Assessment Button */
 
 .start-assessment-button {
-  min-width: 15rem;
-  padding: 0.9rem 1.5rem;
-  border: 1px solid var(--color-accent-sky);
-  border-radius: 999px;
-  color: var(--color-primary-dark);
-  background: linear-gradient(
-    135deg,
-    var(--color-accent-aqua),
-    var(--color-accent-sky)
-  );
-  font-family: var(--font-display);
-  font-weight: 700;
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease;
-  margin-top: 1rem;
+	min-width: 15rem;
+	padding: 0.9rem 1.5rem;
+	border: 1px solid var(--color-accent-sky);
+	border-radius: 999px;
+	color: var(--color-primary-dark);
+	background: linear-gradient(
+		135deg,
+		var(--color-accent-aqua),
+		var(--color-accent-sky)
+	);
+	font-family: var(--font-display);
+	font-weight: 700;
+	transition:
+		transform 180ms ease,
+		box-shadow 180ms ease;
+	margin-top: 1rem;
 }
 
 .start-assessment-button:hover {
-  color: var(--color-primary-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 0.75rem 2rem rgba(56, 189, 248, 0.25);
+	color: var(--color-primary-dark);
+	transform: translateY(-2px);
+	box-shadow: 0 0.75rem 2rem rgba(56, 189, 248, 0.25);
 }
 
 .start-assessment-button:focus-visible {
-  outline: 3px solid var(--color-primary-light);
-  outline-offset: 4px;
+	outline: 3px solid var(--color-primary-light);
+	outline-offset: 4px;
 }
 
 .start-assessment-button:active {
-  transform: scale(0.98);
+	transform: scale(0.98);
 }
 
 /* Quiz progress bar */
 
 #quiz-screen {
-  width: 100%;
+	width: 100%;
 }
 
 .quiz-progress-container {
-  width: min(100%, 48rem);
-  margin-inline: auto;
+	width: min(100%, 48rem);
+	margin-inline: auto;
 }
 
 #question-counter {
-  margin-top: 1.35rem;
-  margin-bottom: 0.75rem;
-  font-family: var(--font-display);
-  color: var(--color-primary-light);
+	margin-top: 1.35rem;
+	margin-bottom: 0.75rem;
+	font-family: var(--font-display);
+	color: var(--color-primary-light);
 }
 
 .progress {
-  height: 1.5rem;
-  overflow: hidden;
-  font-size: 0.96rem;
-  line-height: 1.3;
-  background-color: rgba(245, 246, 244, 0.14);
-  border: 1px solid rgba(103, 232, 249, 0.25);
-  border-radius: 999px;
+	height: 1.5rem;
+	overflow: hidden;
+	font-size: 0.96rem;
+	line-height: 1.3;
+	background-color: rgba(245, 246, 244, 0.14);
+	border: 1px solid rgba(103, 232, 249, 0.25);
+	border-radius: 999px;
 }
 
 .progress-bar {
-  background: linear-gradient(
-    135deg,
-    var(--color-accent-aqua),
-    var(--color-accent-sky)
-  );
-  color: var(--color-primary-dark);
-  font-family: var(--font-display);
-  font-weight: 700;
-  transition: width 0.4s ease;
+	background: linear-gradient(
+		135deg,
+		var(--color-accent-aqua),
+		var(--color-accent-sky)
+	);
+	color: var(--color-primary-dark);
+	font-family: var(--font-display);
+	font-weight: 700;
+	transition: width 0.4s ease;
 }
 
 /* Quiz styles */
 
 .quiz-card {
-  width: min(100%, 48rem);
-  margin-inline: auto;
-  padding: 1.5rem;
-  border: 1px solid rgba(103, 232, 249, 0.16);
-  border-radius: 1.5rem;
-  background:
-    linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(11, 17, 32, 0.9)),
-    radial-gradient(
-      circle at top right,
-      rgba(103, 232, 249, 0.08),
-      transparent 38%
-    ),
-    radial-gradient(
-      circle at bottom left,
-      rgba(56, 189, 248, 0.06),
-      transparent 32%
-    );
-  box-shadow:
-    0 1.5rem 4rem rgba(2, 6, 23, 0.55),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+	width: min(100%, 48rem);
+	margin-inline: auto;
+	padding: 1.5rem;
+	border: 1px solid rgba(103, 232, 249, 0.16);
+	border-radius: 1.5rem;
+	background:
+		linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(11, 17, 32, 0.9)),
+		radial-gradient(
+			circle at top right,
+			rgba(103, 232, 249, 0.08),
+			transparent 38%
+		),
+		radial-gradient(
+			circle at bottom left,
+			rgba(56, 189, 248, 0.06),
+			transparent 32%
+		);
+	box-shadow:
+		0 1.5rem 4rem rgba(2, 6, 23, 0.55),
+		inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .quiz-card h2 {
-  margin-bottom: 0.38rem;
-  font-family: var(--font-display);
-  color: var(--color-primary-light);
+	margin-bottom: 0.38rem;
+	font-family: var(--font-display);
+	color: var(--color-primary-light);
 }
 
 .quiz-card p {
-  line-height: 1.65;
-  color: rgba(226, 232, 240, 0.82);
+	line-height: 1.65;
+	color: rgba(226, 232, 240, 0.82);
 }
 
 .quiz-options {
-  margin-top: 1.1rem;
+	margin-top: 1.1rem;
 }
 
 .quiz-option {
-  min-width: 13rem;
-  padding: 1rem 1.05rem;
-  border: 1px solid rgba(103, 232, 249, 0.18);
-  border-radius: 1rem;
-  color: #fff;
-  text-align: left;
-  transition:
-    transform 160ms ease,
-    box-shadow 160ms ease,
-    border-color 160ms ease,
-    background-color 160ms ease;
+	min-width: 13rem;
+	padding: 1rem 1.05rem;
+	border: 1px solid rgba(103, 232, 249, 0.18);
+	border-radius: 1rem;
+	color: #fff;
+	text-align: left;
+	transition:
+		transform 160ms ease,
+		box-shadow 160ms ease,
+		border-color 160ms ease,
+		background-color 160ms ease;
 }
 
 .quiz-option:hover,
 .quiz-option:focus-visible {
-  transform: translateY(-1px);
-  border-color: rgba(103, 232, 249, 0.4);
-  box-shadow: 0 0.75rem 1.6rem rgba(2, 6, 23, 0.35);
+	transform: translateY(-1px);
+	border-color: rgba(103, 232, 249, 0.4);
+	box-shadow: 0 0.75rem 1.6rem rgba(2, 6, 23, 0.35);
 }
 
 /* Results */
 
 #resultsContainer {
-  width: 100%;
-  min-height: 30rem;
+	width: 100%;
+	min-height: 30rem;
 }
 
 .results-card {
-  width: min(100%, 64rem);
-  margin-inline: auto;
-  padding: 1.5rem;
-  border: 1px solid rgba(103, 232, 249, 0.16);
-  border-radius: 1.5rem;
-  background:
-    linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(11, 17, 32, 0.9)),
-    radial-gradient(
-      circle at top right,
-      rgba(103, 232, 249, 0.12),
-      transparent 38%
-    ),
-    radial-gradient(
-      circle at bottom left,
-      rgba(56, 189, 248, 0.08),
-      transparent 32%
-    );
-  box-shadow:
-    0 1.5rem 4rem rgba(2, 6, 23, 0.55),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+	width: min(100%, 64rem);
+	margin-inline: auto;
+	padding: 1.5rem;
+	border: 1px solid rgba(103, 232, 249, 0.16);
+	border-radius: 1.5rem;
+	background:
+		linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(11, 17, 32, 0.9)),
+		radial-gradient(
+			circle at top right,
+			rgba(103, 232, 249, 0.12),
+			transparent 38%
+		),
+		radial-gradient(
+			circle at bottom left,
+			rgba(56, 189, 248, 0.08),
+			transparent 32%
+		);
+	box-shadow:
+		0 1.5rem 4rem rgba(2, 6, 23, 0.55),
+		inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .results-header {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 1rem;
-  align-items: start;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	gap: 1rem;
+	align-items: start;
 }
 
 .results-eyebrow,
 .results-chart-meta__label,
 .results-badge__label {
-  margin: 0;
-  color: rgba(103, 232, 249, 0.88);
-  font-family: var(--font-utility);
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+	margin: 0;
+	color: rgba(103, 232, 249, 0.88);
+	font-family: var(--font-utility);
+	font-size: 0.72rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
 }
 
 .results-card h2 {
-  margin: 0.25rem 0 0.5rem;
-  font-family: var(--font-display);
-  font-size: clamp(1.9rem, 3vw, 2.8rem);
-  line-height: 1;
+	margin: 0.25rem 0 0.5rem;
+	font-family: var(--font-display);
+	font-size: clamp(1.9rem, 3vw, 2.8rem);
+	line-height: 1;
 }
 
 .results-subtitle {
-  max-width: 40rem;
-  margin: 0;
-  color: rgba(226, 232, 240, 0.76);
-  text-align: left;
+	max-width: 40rem;
+	margin: 0;
+	color: rgba(226, 232, 240, 0.76);
+	text-align: left;
 }
 
 .results-badge {
-  justify-self: end;
-  min-width: 12rem;
-  padding: 0.95rem 1rem;
-  border: 1px solid rgba(103, 232, 249, 0.16);
-  border-radius: 1rem;
-  background: rgba(2, 6, 23, 0.48);
-  text-align: left;
+	justify-self: end;
+	min-width: 12rem;
+	padding: 0.95rem 1rem;
+	border: 1px solid rgba(103, 232, 249, 0.16);
+	border-radius: 1rem;
+	background: rgba(2, 6, 23, 0.48);
+	text-align: left;
 }
 
 .results-badge__value {
-  display: block;
-  margin-top: 0.35rem;
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  color: var(--color-primary-light);
+	display: block;
+	margin-top: 0.35rem;
+	font-family: var(--font-display);
+	font-size: 1.05rem;
+	color: var(--color-primary-light);
 }
 
 .results-layout-desktop,
 .results-layout-mobile {
-  margin-top: 0.8rem;
+	margin-top: 0.8rem;
 }
 
 .results-panel {
-  height: 100%;
-  padding: 1rem;
-  border: 1px solid rgba(148, 163, 184, 0.14);
-  border-radius: 1.25rem;
-  background: rgba(15, 23, 42, 0.58);
+	height: 100%;
+	padding: 1rem;
+	border: 1px solid rgba(148, 163, 184, 0.14);
+	border-radius: 1.25rem;
+	background: rgba(15, 23, 42, 0.58);
 }
 
 .results-chart-wrap {
-  margin: 1.25rem 0 1.5rem;
-  padding: 1rem;
-  border: 1px solid rgba(148, 163, 184, 0.14);
-  border-radius: 1.25rem;
-  background: rgba(15, 23, 42, 0.58);
+	margin: 1.25rem 0 1.5rem;
+	padding: 1rem;
+	border: 1px solid rgba(148, 163, 184, 0.14);
+	border-radius: 1.25rem;
+	background: rgba(15, 23, 42, 0.58);
 }
 
 .results-chart-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 0.85rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-bottom: 0.85rem;
 }
 
 .results-chart-meta__hint {
-  color: rgba(226, 232, 240, 0.58);
-  font-size: 0.9rem;
+	color: rgba(226, 232, 240, 0.58);
+	font-size: 0.9rem;
 }
 
 .results-chart {
-  width: 100%;
-  min-height: 28rem;
-  border-radius: 1rem;
-  overflow: hidden;
+	width: 100%;
+	min-height: 28rem;
+	border-radius: 1rem;
+	overflow: hidden;
 }
 
 .results-chart-slot {
-  width: 100%;
-  min-height: 28rem;
+	width: 100%;
+	min-height: 28rem;
 }
 
 .results-panel--traits .trait-strip {
-  margin-top: 0.35rem;
+	margin-top: 0.35rem;
 }
 
 .trait-strip--stacked {
-  grid-template-columns: 1fr;
+	grid-template-columns: 1fr;
 }
 
 .results-tabs {
-  border-bottom: 1px solid rgba(103, 232, 249, 0.2);
-  gap: 0.35rem;
+	border-bottom: 1px solid rgba(103, 232, 249, 0.2);
+	gap: 0.35rem;
 }
 
 .results-tabs .nav-link {
-  border: 1px solid transparent;
-  border-bottom: 0;
-  color: rgba(226, 232, 240, 0.72);
-  font-family: var(--font-utility);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-size: 0.74rem;
+	border: 1px solid transparent;
+	border-bottom: 0;
+	color: rgba(226, 232, 240, 0.72);
+	font-family: var(--font-utility);
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	font-size: 0.74rem;
 }
 
 .results-tabs .nav-link:hover,
 .results-tabs .nav-link:focus-visible {
-  border-color: rgba(103, 232, 249, 0.28);
-  color: rgba(226, 232, 240, 0.9);
+	border-color: rgba(103, 232, 249, 0.28);
+	color: rgba(226, 232, 240, 0.9);
 }
 
 .results-tabs .nav-link.active {
-  background: rgba(15, 23, 42, 0.68);
-  border-color: rgba(103, 232, 249, 0.28);
-  color: rgba(103, 232, 249, 0.94);
+	background: rgba(15, 23, 42, 0.68);
+	border-color: rgba(103, 232, 249, 0.28);
+	color: rgba(103, 232, 249, 0.94);
 }
 
 .results-tabs-content {
-  margin-top: 0.85rem;
+	margin-top: 0.85rem;
 }
 
 .results-tabs-content .tab-pane {
-  outline: none;
+	outline: none;
 }
 
 .trait-strip {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.75rem;
-  margin-top: 1rem;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 0.75rem;
+	margin-top: 1rem;
 }
 
 .trait-chip {
-  position: relative;
-  overflow: hidden;
-  padding: 0.9rem 1rem 0.9rem 1.2rem;
-  border: 1px solid rgba(148, 163, 184, 0.16);
-  border-radius: 1rem;
-  background: linear-gradient(
-    180deg,
-    color-mix(in oklab, var(--trait-accent) 18%, rgba(15, 23, 42, 0.92)),
-    rgba(15, 23, 42, 0.78)
-  );
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  text-align: left;
+	position: relative;
+	overflow: hidden;
+	padding: 0.9rem 1rem 0.9rem 1.2rem;
+	border: 1px solid rgba(148, 163, 184, 0.16);
+	border-radius: 1rem;
+	background: linear-gradient(
+		180deg,
+		color-mix(in oklab, var(--trait-accent) 18%, rgba(15, 23, 42, 0.92)),
+		rgba(15, 23, 42, 0.78)
+	);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+	text-align: left;
 }
 
 .trait-chip::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 0.28rem;
-  background: var(--trait-accent, var(--color-accent-aqua));
+	content: "";
+	position: absolute;
+	inset: 0 auto 0 0;
+	width: 0.28rem;
+	background: var(--trait-accent, var(--color-accent-aqua));
 }
 
 .trait-chip--primary {
-  border-color: color-mix(
-    in oklab,
-    var(--trait-accent) 46%,
-    rgba(103, 232, 249, 0.2)
-  );
+	border-color: color-mix(
+		in oklab,
+		var(--trait-accent) 46%,
+		rgba(103, 232, 249, 0.2)
+	);
 }
 
 .trait-chip--secondary {
-  border-color: color-mix(
-    in oklab,
-    var(--trait-accent) 34%,
-    rgba(56, 189, 248, 0.22)
-  );
+	border-color: color-mix(
+		in oklab,
+		var(--trait-accent) 34%,
+		rgba(56, 189, 248, 0.22)
+	);
 }
 
 .trait-chip--tertiary {
-  border-color: color-mix(
-    in oklab,
-    var(--trait-accent) 24%,
-    rgba(148, 163, 184, 0.2)
-  );
+	border-color: color-mix(
+		in oklab,
+		var(--trait-accent) 24%,
+		rgba(148, 163, 184, 0.2)
+	);
 }
 
 .trait-chip__rank {
-  display: inline-flex;
-  margin-bottom: 0.65rem;
-  color: rgba(103, 232, 249, 0.82);
-  font-family: var(--font-utility);
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
+	display: inline-flex;
+	margin-bottom: 0.65rem;
+	color: rgba(103, 232, 249, 0.82);
+	font-family: var(--font-utility);
+	font-size: 0.72rem;
+	letter-spacing: 0.12em;
 }
 
 .trait-chip__body {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 1rem;
 }
 
 .trait-chip__label {
-  color: var(--color-primary-light);
-  font-size: 0.98rem;
-  font-weight: 500;
+	color: var(--color-primary-light);
+	font-size: 0.98rem;
+	font-weight: 500;
 }
 
 .trait-chip__value {
-  color: color-mix(
-    in oklab,
-    var(--trait-accent) 75%,
-    var(--color-primary-light)
-  );
-  font-family: var(--font-display);
-  font-size: 1.25rem;
+	color: color-mix(
+		in oklab,
+		var(--trait-accent) 75%,
+		var(--color-primary-light)
+	);
+	font-family: var(--font-display);
+	font-size: 1.25rem;
 }
 
 .results-section {
-  margin-top: 1.25rem;
+	margin-top: 1.25rem;
 }
 
 .results-section h3,
 .results-card strong {
-  color: color-mix(
-    in oklab,
-    var(--color-primary-light) 94%,
-    var(--color-accent-aqua)
-  );
+	color: color-mix(
+		in oklab,
+		var(--color-primary-light) 94%,
+		var(--color-accent-aqua)
+	);
 }
 
 .results-section h3 {
-  margin: 0 0 0.75rem;
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  text-align: left;
+	margin: 0 0 0.75rem;
+	font-family: var(--font-display);
+	font-size: 1.05rem;
+	text-align: left;
 }
 
 .results-card ul {
-  margin: 0.75rem 0 0;
-  padding-left: 1.1rem;
-  text-align: left;
-  color: rgba(226, 232, 240, 0.78);
+	margin: 0.75rem 0 0;
+	padding-left: 1.1rem;
+	text-align: left;
+	color: rgba(226, 232, 240, 0.78);
 }
 
 .results-card li {
-  margin-bottom: 0.45rem;
+	margin-bottom: 0.45rem;
 }
 
 .results-card li strong {
-  color: var(--color-accent-aqua);
+	color: var(--color-accent-aqua);
 }
 
 .results-card button {
-  justify-self: start;
+	justify-self: start;
 }
 
 @media (max-width: 768px) {
-  .welcome-content,
-  .results-card,
-  .quiz-card {
-    padding: 1rem;
-  }
+	.welcome-content,
+	.results-card,
+	.quiz-card {
+		padding: 1rem;
+	}
 
-  .results-header,
-  .results-chart-meta,
-  .trait-strip,
-  .trait-chip__body {
-    grid-template-columns: 1fr;
-  }
+	.results-header,
+	.results-chart-meta,
+	.trait-strip,
+	.trait-chip__body {
+		grid-template-columns: 1fr;
+	}
 
-  .results-header,
-  .results-chart-meta,
-  .trait-chip__body {
-    display: grid;
-  }
+	.results-header,
+	.results-chart-meta,
+	.trait-chip__body {
+		display: grid;
+	}
 
-  .results-badge {
-    justify-self: start;
-    width: 100%;
-  }
+	.results-badge {
+		justify-self: start;
+		width: 100%;
+	}
 
-  .trait-strip {
-    grid-template-columns: 1fr;
-  }
+	.trait-strip {
+		grid-template-columns: 1fr;
+	}
 
-  .results-chart {
-    min-height: 24rem;
-  }
+	.results-chart {
+		min-height: 24rem;
+	}
 
-  .results-chart-slot {
-    min-height: 24rem;
-  }
+	.results-chart-slot {
+		min-height: 24rem;
+	}
 }
 
 @media (max-width: 991.98px) {
-  .results-layout-mobile .results-panel {
-    padding: 0.95rem;
-  }
+	.results-layout-mobile .results-panel {
+		padding: 0.95rem;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .progress-bar,
-  .start-assessment-button,
-  .quiz-option {
-    transition: none;
-  }
+	.progress-bar,
+	.start-assessment-button,
+	.quiz-option {
+		transition: none;
+	}
 }
