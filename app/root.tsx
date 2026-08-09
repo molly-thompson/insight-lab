@@ -6,22 +6,9 @@ import {
 	Scripts,
 	ScrollRestoration,
 } from "react-router";
-
-import type { Route } from "./+types/root";
 import "./app.css";
 
-export const links: Route.LinksFunction = () => [
-	{ rel: "preconnect", href: "https://fonts.googleapis.com" },
-	{
-		rel: "preconnect",
-		href: "https://fonts.gstatic.com",
-		crossOrigin: "anonymous",
-	},
-	{
-		rel: "stylesheet",
-		href: "https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap",
-	},
-];
+import type { Route } from "./+types/root";
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	return (
@@ -29,6 +16,36 @@ export function Layout({ children }: { children: React.ReactNode }) {
 			<head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<meta name="color-scheme" content="dark only" />
+				<meta
+					name="keywords"
+					content="behavioral assessment, personality quiz, skills assessment, trait analysis, strengths analysis"
+				/>
+				<link
+					rel="icon"
+					type="image/png"
+					href="/favicon-96x96.png"
+					sizes="96x96"
+				/>
+				<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+				<link rel="shortcut icon" href="/favicon.ico" />
+				<link
+					rel="apple-touch-icon"
+					sizes="180x180"
+					href="/apple-touch-icon.png"
+				/>
+				<link rel="manifest" href="/site.webmanifest" />
+				<meta name="/apple-mobile-web-app-title" content="InsightLab" />
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link
+					rel="preconnect"
+					href="https://fonts.gstatic.com"
+					crossOrigin="anonymous"
+				/>
+				<link
+					href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Grotesk:wght@300..700&display=swap"
+					rel="stylesheet"
+				/>
 				<Meta />
 				<Links />
 			</head>
