@@ -1,7 +1,13 @@
-# OS
-.vscode/
 .DS_Store
-Thumbs.db
+.env
+/node_modules/
 
-# Project board
+# React Router
+/.react-router/
+/build/
+
+# VS Code settings
+.vscode/
+
+# Repo templates
 .github/

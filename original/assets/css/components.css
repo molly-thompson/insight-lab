@@ -135,8 +135,16 @@
   border-radius: 1.5rem;
   background:
     linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(11, 17, 32, 0.9)),
-    radial-gradient(circle at top right, rgba(103, 232, 249, 0.08), transparent 38%),
-    radial-gradient(circle at bottom left, rgba(56, 189, 248, 0.06), transparent 32%);
+    radial-gradient(
+      circle at top right,
+      rgba(103, 232, 249, 0.08),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(56, 189, 248, 0.06),
+      transparent 32%
+    );
   box-shadow:
     0 1.5rem 4rem rgba(2, 6, 23, 0.55),
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
@@ -193,8 +201,16 @@
   border-radius: 1.5rem;
   background:
     linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(11, 17, 32, 0.9)),
-    radial-gradient(circle at top right, rgba(103, 232, 249, 0.12), transparent 38%),
-    radial-gradient(circle at bottom left, rgba(56, 189, 248, 0.08), transparent 32%);
+    radial-gradient(
+      circle at top right,
+      rgba(103, 232, 249, 0.12),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(56, 189, 248, 0.08),
+      transparent 32%
+    );
   box-shadow:
     0 1.5rem 4rem rgba(2, 6, 23, 0.55),
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
@@ -250,6 +266,19 @@
   color: var(--color-primary-light);
 }
 
+.results-layout-desktop,
+.results-layout-mobile {
+  margin-top: 0.8rem;
+}
+
+.results-panel {
+  height: 100%;
+  padding: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 1.25rem;
+  background: rgba(15, 23, 42, 0.58);
+}
+
 .results-chart-wrap {
   margin: 1.25rem 0 1.5rem;
   padding: 1rem;
@@ -276,6 +305,54 @@
   min-height: 28rem;
   border-radius: 1rem;
   overflow: hidden;
+}
+
+.results-chart-slot {
+  width: 100%;
+  min-height: 28rem;
+}
+
+.results-panel--traits .trait-strip {
+  margin-top: 0.35rem;
+}
+
+.trait-strip--stacked {
+  grid-template-columns: 1fr;
+}
+
+.results-tabs {
+  border-bottom: 1px solid rgba(103, 232, 249, 0.2);
+  gap: 0.35rem;
+}
+
+.results-tabs .nav-link {
+  border: 1px solid transparent;
+  border-bottom: 0;
+  color: rgba(226, 232, 240, 0.72);
+  font-family: var(--font-utility);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.74rem;
+}
+
+.results-tabs .nav-link:hover,
+.results-tabs .nav-link:focus-visible {
+  border-color: rgba(103, 232, 249, 0.28);
+  color: rgba(226, 232, 240, 0.9);
+}
+
+.results-tabs .nav-link.active {
+  background: rgba(15, 23, 42, 0.68);
+  border-color: rgba(103, 232, 249, 0.28);
+  color: rgba(103, 232, 249, 0.94);
+}
+
+.results-tabs-content {
+  margin-top: 0.85rem;
+}
+
+.results-tabs-content .tab-pane {
+  outline: none;
 }
 
 .trait-strip {
@@ -434,6 +511,16 @@
 
   .results-chart {
     min-height: 24rem;
+  }
+
+  .results-chart-slot {
+    min-height: 24rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .results-layout-mobile .results-panel {
+    padding: 0.95rem;
   }
 }
 

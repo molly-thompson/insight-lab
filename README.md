@@ -40,135 +40,135 @@ The application contains 30 scenario-based multiple-choice questions that assess
 
 #### User Stories
 
-#### User Story 1
+##### User Story 1
 
 As a user visiting the site for the first time, I want to see a clear introduction to the personality assessment so that I understand what the quiz is about before I begin.
 
-##### Feature:
+**Feature:**
 
 Welcome screen
 
-##### Acceptance Criteria:
+**Acceptance Criteria:**
 
 - Landing page includes a clear heading and introduction.
 - The purpose of the personality assessment is explained.
 - The layout is responsive across mobile, tablet and desktop.
 - The page loads correctly without errors.
 
-#### User Story 2
+##### User Story 2
 
 As a user eager to begin the assessment, I want a clear "Start Assessment" button so that I can begin the quiz immediately.
 
-##### Feature:
+**Feature:**
 
 Hero CTA
 
-##### Acceptance Criteria:
+**Acceptance Criteria:**
 
 - A prominent Start Assessment button is displayed.
 - Button navigates the user to the quiz.
 - Button is clearly visible on all screen sizes.
 - Hover and focus states are implemented.
 
-#### User Story 3
+##### User Story 3
 
 As a user, I want to answer multiple-choice questions so that my personality can be analysed accurately.
 
-##### Feature:
+**Feature:**
 
 Quiz Questions
 
-##### Acceptance Criteria:
+**Acceptance Criteria:**
 
 - Questions display correctly.
 - Four answer options are available for each question.
 - Only one answer can be selected per question.
 - Answers are recorded correctly.
 
-#### User Story 4
+##### User Story 4
 
 As a user, I want to know how far through the quiz I am so that I understand my progress.
 
-##### Feature:
+**Feature:**
 
 Progress Tracker
 
-##### Acceptance Criteria:
+**Acceptance Criteria:**
 
 - Progress updates after each answered question.
 - The current question number is displayed.
 - The progress bar reaches 100% on the final question.
 - The progress bar is hidden on the results page.
 
-#### User Story 5
+##### User Story 5
 
 As a user, I want to retake the assessment so that I can explore how different answers affect my result.
 
-##### Feature:
+**Feature:**
 
 Retake Quiz button
 
-##### Acceptance Criteria:
+**Acceptance Criteria:**
 
 - A Retake Quiz button is displayed.
 - Previous answers are cleared.
 - Quiz restarts from Question 1.
 - New results are calculated correctly.
 
-#### User Story 6
+##### User Story 6
 
 As a mobile, tablet and desktop user, I want the website to adapt to my screen size so that I can complete the assessment comfortably.
 
-##### Feature:
+**Feature:**
 
 Responsive Design
 
-##### Acceptance Criteria:
+**Acceptance Criteria:**
 
 - Layout works from approximately 320px upwards.
 - Navigation remains usable.
 - No overlapping content.
 - Images scale correctly.
 
-#### User Story 7
+##### User Story 7
 
 As a first-time visitor, I want simple navigation so that I can easily move around the website.
 
-##### Feature:
+**Feature:**
 
 Navigation menu
 
-##### Acceptance Criteria:
+**Acceptance Criteria:**
 
 - Navigation links work correctly.
 - Active links are visible.
 - Navigation is responsive.
 - Users can easily return to the homepage.
 
-#### User Story 8
+##### User Story 8
 
 As a curious user, I want to receive my personality result once I complete the quiz so that I can learn more about myself.
 
-##### Feature:
+**Feature:**
 
 Results page
 
-##### Acceptance Criteria:
+**Acceptance Criteria:**
 
 - A personality result is displayed.
 - Result matches the user's answers.
 - Description explains the personality type.
 - Results page is responsive.
 
-#### User Story 9
+##### User Story 9
 
 As a user with accessibility needs, I want the website to be easy to use so that I can complete the assessment without barriers.
 
-##### Feature:
+**Feature:**
 
 Accessibility
 
-##### Acceptance Criteria:
+**Acceptance Criteria:**
 
 - Keyboard navigation works.
 - Colour contrast meets accessibility guidelines.
