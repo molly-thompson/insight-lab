@@ -59,7 +59,7 @@ export default function Home() {
                     <OutlinePill text="Instant results" />
                 </div>
 
-                <AccentBtn text="Start Assessment" />
+                <AccentBtn text="Start Assessment" to="/assessments"/>
 
             </div>
         </section>

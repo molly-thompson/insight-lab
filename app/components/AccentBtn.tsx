@@ -1,12 +1,14 @@
+import { Link } from "react-router";
+
 type AccentBtnProps = React.ComponentProps<"button"> & {
     text: string;
+    to: string;
 };
 
-export default function AccentBtn({ text, ...props }: AccentBtnProps) {
+export default function AccentBtn({ text, to }: AccentBtnProps) {
     return (
-        <button
-            {...props}
-            type="button"
+        <Link
+            to={to}
             className="
                 mt-[clamp(0.75rem,1.5vw,1rem)]
                 cursor-pointer
@@ -30,6 +32,6 @@ export default function AccentBtn({ text, ...props }: AccentBtnProps) {
                 active:scale-[0.98]"
         >
             {text}
-        </button>
+        </Link>
     );
 }
