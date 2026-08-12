@@ -46,20 +46,19 @@ export default function Home() {
                     leading-[1.7]
                     text-primary-light/78
                 ">
-                    Understand your behavioural traits through a short personality
-                    assessment designed to reveal your unique profile.
-                </p>
+					Explore the behaviours, strengths, and decision-making patterns that shape how people work - and gain a clearer picture of what makes them tick.
+				</p>
 
                 <div
                     className="mb-[clamp(0.75rem,1.5vw,1rem)] flex flex-wrap justify-center gap-[clamp(0.5rem,1vw,0.75rem)]"
                     aria-label="Assessment details"
                 >
-                    <OutlinePill text="30 questions" />
-                    <OutlinePill text="7-10 minutes" />
-                    <OutlinePill text="Instant results" />
+                    <OutlinePill text="10 behavioural dimensions" />
+                    <OutlinePill text="Structured analysis" />
+                    <OutlinePill text="Individual insights" />
                 </div>
 
-                <AccentBtn text="Start Assessment" to="/assessments"/>
+                <AccentBtn text="Get Started" to="/assessments"/>
 
             </div>
         </section>

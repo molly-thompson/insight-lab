@@ -7,8 +7,8 @@ export default function OutlinePill({ text, ...props }: OutlinePillProps) {
     {...props} 
     className="
     rounded-full
-    border border-secondary/35
-    bg-secondary/16
+    border border-secondary/25
+    bg-secondary/6
     px-[clamp(1rem,1.5vw,1.4rem)]
     py-[clamp(0.45rem,0.7vw,0.6rem)]
     font-display
