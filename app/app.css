@@ -45,6 +45,7 @@
     var(--color-base-100)
   );
 }
+/* PAGE & BACKGROUND STYLES */
 body {
   font-family: var(--font-sans);
   color: var(--color-base-content);
@@ -84,7 +85,6 @@ body {
     background-color: oklch(45% 0.055 266.625);
   }
 }
-/* BACKGROUND */
 .grid-overlay {
   /* Grid vignette effect */
   position: fixed;
@@ -106,4 +106,12 @@ body {
   opacity: 0.02;
   z-index: -99;
   mix-blend-mode: soft-light;
+}
+
+/* TYPOGRAPHY */
+.tag {
+  font-family: var(--font-utility);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-secondary);
 }
