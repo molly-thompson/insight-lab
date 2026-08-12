@@ -51,7 +51,7 @@ export default function AppLayout() {
 					</nav>
 				</header>
 				{/* PAGE CONTENT */}
-				<main className="flex-1">
+				<main className="flex-1 justify-center items-center">
 					<Outlet />
 				</main>
                 {/* FOOTER */}
